@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rolfam Tours & Travel — Kenya's Premier Safari & Coastal Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ─── TOKENS ─────────────────────────────────── */
+:root {
+  --bg:       #F8F6F2;
+  --primary:  #0F4C5C;
+  --accent:   #D97757;
+  --text:     #102A43;
+  --card:     #FFFFFF;
+  --border:   rgba(15,76,92,0.08);
+  --muted:    #5C7A8A;
+  --sand:     #EDE8DE;
+  --glass:    rgba(15,76,92,0.72);
+  --radius:   22px;
+  --radius-sm:12px;
+}
+
+/* ─── RESET ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; }
+ul { list-style: none; }
+
+/* ─── UTILITY ────────────────────────────────── */
+.serif { font-family: 'Playfair Display', serif; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent);
+}
+.eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
+.section-head { margin-bottom: 3.5rem; }
+.section-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 4vw, 3rem); font-weight: 500;
+  line-height: 1.18; color: var(--text); margin-top: 0.75rem;
+}
+.section-head p { color: var(--muted); font-size: 1rem; line-height: 1.75; max-width: 480px; margin-top: 0.9rem; }
+
+/* ─── SCROLL REVEAL ──────────────────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ══════════════════════════════════════════════ */
+/* NAV                                            */
+/* ══════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 3.5rem;
+  background: rgba(15,76,92,0.08);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.35s, box-shadow 0.35s;
+}
+nav.scrolled {
+  background: rgba(15,76,92,0.92);
+  box-shadow: 0 4px 32px rgba(15,76,92,0.25);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; font-weight: 600;
+  color: #fff; letter-spacing: 0.01em;
+  display: flex; align-items: baseline; gap: 4px;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2.2rem; }
+.nav-links a {
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.07em;
+  text-transform: uppercase; color: rgba(255,255,255,0.8);
+  transition: color 0.2s; position: relative; padding-bottom: 2px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--accent); transition: width 0.25s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--accent); color: #fff;
+  padding: 0.62rem 1.5rem; border-radius: 50px;
+  font-size: 0.83rem; font-weight: 600; letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(217,119,87,0.35);
+}
+.nav-cta:hover { background: #c8653d; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(217,119,87,0.45); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all 0.3s; border-radius: 2px; }
+
+/* ══════════════════════════════════════════════ */
+/* HERO                                           */
+/* ══════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=90') center/cover no-repeat;
+  transform: scale(1.06); transition: transform 8s ease;
+}
+.hero-bg.loaded { transform: scale(1); }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(10,36,48,0.35) 0%,
+    rgba(10,36,48,0.15) 40%,
+    rgba(10,36,48,0.72) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 3.5rem 5.5rem;
+  max-width: 1200px; width: 100%;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2rem; align-items: flex-end;
+}
+.hero-text { max-width: 660px; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.4rem 1rem; border-radius: 50px;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.9);
+  margin-bottom: 1.4rem;
+  animation: fadeUp 0.9s ease both;
+}
+.hero-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6.5vw, 5.8rem);
+  font-weight: 500; line-height: 1.06;
+  color: #fff; letter-spacing: -0.01em;
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+.hero-text h1 em { font-style: italic; color: var(--sand); }
+.hero-sub {
+  margin-top: 1.5rem; max-width: 440px;
+  color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.72;
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+.hero-trust {
+  display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;
+  animation: fadeUp 0.9s 0.3s ease both;
+}
+.trust-badge {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.85); font-size: 0.82rem;
+}
+.trust-badge .stars { color: #F5C842; font-size: 0.9rem; }
+.hero-btns {
+  display: flex; gap: 0.9rem; margin-top: 2.4rem;
+  animation: fadeUp 0.9s 0.4s ease both;
+}
+.btn-hero-primary {
+  background: var(--accent); color: #fff;
+  padding: 0.9rem 2rem; border-radius: 50px;
+  font-size: 0.9rem; font-weight: 600;
+  box-shadow: 0 6px 24px rgba(217,119,87,0.4);
+  transition: all 0.2s;
+}
+.btn-hero-primary:hover { background: #c8653d; transform: translateY(-2px); }
+.btn-hero-outline {
+  background: rgba(255,255,255,0.1); color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 0.9rem 2rem; border-radius: 50px;
+  font-size: 0.9rem; font-weight: 500;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+}
+.btn-hero-outline:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.6); }
+
+/* Floating review card */
+.hero-review {
+  background: rgba(255,255,255,0.11); backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 18px; padding: 1.2rem 1.4rem;
+  min-width: 240px; max-width: 280px;
+  animation: fadeUp 0.9s 0.55s ease both;
+  align-self: flex-end; margin-bottom: 0.5rem;
+}
+.hero-review-stars { color: #F5C842; font-size: 0.85rem; margin-bottom: 0.5rem; }
+.hero-review-text { font-size: 0.82rem; color: rgba(255,255,255,0.88); line-height: 1.55; font-style: italic; }
+.hero-review-author { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.8rem; }
+.hero-review-avatar {
+  width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.35);
+}
+.hero-review-name { font-size: 0.76rem; color: rgba(255,255,255,0.7); }
+.hero-review-name strong { display: block; color: #fff; font-size: 0.8rem; }
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%); z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.5); font-size: 0.68rem; letter-spacing: 0.14em;
+  text-transform: uppercase; animation: fadeUp 1s 0.8s ease both;
+}
+.scroll-mouse {
+  width: 24px; height: 38px; border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 12px; position: relative;
+}
+.scroll-mouse::after {
+  content: ''; position: absolute; top: 7px; left: 50%;
+  transform: translateX(-50%); width: 3px; height: 7px;
+  background: #fff; border-radius: 2px;
+  animation: scrollBounce 2s infinite;
+}
+
+/* ══════════════════════════════════════════════ */
+/* STATS BAR                                      */
+/* ══════════════════════════════════════════════ */
+.stats-bar {
+  background: var(--primary);
+  display: flex; justify-content: center; gap: 0;
+}
+.stat-item {
+  flex: 1; max-width: 220px;
+  text-align: center; padding: 2rem 1rem;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 600; color: var(--accent);
+}
+.stat-lbl { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 0.3rem; }
+
+/* ══════════════════════════════════════════════ */
+/* DESTINATIONS                                   */
+/* ══════════════════════════════════════════════ */
+.destinations { padding: 6rem 3.5rem; }
+.dest-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-rows: 300px 280px;
+  gap: 14px;
+}
+.dest-card {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius); cursor: pointer;
+}
+.dest-card:first-child { grid-row: 1 / 3; }
+.dest-card img {
+  width: 100%; height: 100%;
+  object-fit: cover; transition: transform 0.65s ease;
+}
+.dest-card:hover img { transform: scale(1.06); }
+.dest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,40,55,0.78) 0%, rgba(15,40,55,0) 55%);
+  transition: background 0.35s;
+}
+.dest-card:hover .dest-overlay {
+  background: linear-gradient(to top, rgba(15,40,55,0.88) 0%, rgba(15,40,55,0.1) 55%);
+}
+.dest-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1.4rem 1.5rem;
+}
+.dest-tag {
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.35rem;
+}
+.dest-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: #fff; line-height: 1.2;
+}
+.dest-card:first-child .dest-name { font-size: 2rem; }
+.dest-sub { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.35rem; }
+.dest-arrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 0.75rem; font-size: 0.78rem; color: var(--accent);
+  opacity: 0; transform: translateX(-8px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.dest-card:hover .dest-arrow { opacity: 1; transform: none; }
+
+/* ══════════════════════════════════════════════ */
+/* PACKAGES                                       */
+/* ══════════════════════════════════════════════ */
+.packages { padding: 6rem 3.5rem; background: var(--sand); }
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pkg-card {
+  background: var(--card); border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 28px var(--border);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+.pkg-card:hover { transform: translateY(-8px); box-shadow: 0 16px 52px rgba(15,76,92,0.14); }
+.pkg-img-wrap { position: relative; overflow: hidden; height: 210px; }
+.pkg-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.pkg-card:hover .pkg-img-wrap img { transform: scale(1.07); }
+.pkg-badge {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(6px);
+  color: var(--primary); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.28rem 0.7rem; border-radius: 50px;
+}
+.pkg-fav {
+  position: absolute; top: 14px; right: 14px;
+  width: 34px; height: 34px; background: rgba(255,255,255,0.9);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 0.9rem; cursor: pointer;
+  transition: transform 0.2s;
+}
+.pkg-fav:hover { transform: scale(1.15); }
+.pkg-body { padding: 1.4rem 1.5rem 1.2rem; }
+.pkg-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 0.55rem; }
+.pkg-dur { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+.pkg-rating { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.pkg-rating .star { color: #F5C842; font-size: 0.8rem; }
+.pkg-rating span { font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+.pkg-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 500; color: var(--text);
+  line-height: 1.3; margin-bottom: 0.5rem;
+}
+.pkg-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.62; }
+.pkg-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.pkg-price { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--text); }
+.pkg-price small { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--muted); font-weight: 400; }
+.btn-view {
+  background: transparent; color: var(--primary);
+  border: 1.5px solid var(--primary);
+  padding: 0.5rem 1.1rem; border-radius: 50px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.btn-view:hover { background: var(--primary); color: #fff; }
+
+/* ══════════════════════════════════════════════ */
+/* WHY CHOOSE                                     */
+/* ══════════════════════════════════════════════ */
+.why {
+  padding: 6rem 3.5rem;
+  background: var(--primary);
+  position: relative; overflow: hidden;
+}
+.why::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(217,119,87,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why .section-head h2 { color: #fff; }
+.why .section-head p { color: rgba(255,255,255,0.6); }
+.why .eyebrow { color: var(--accent); }
+.why .eyebrow::before { background: var(--accent); }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.why-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius); padding: 2.2rem 1.8rem;
+  transition: background 0.3s, transform 0.3s;
+}
+.why-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-5px);
+}
+.why-icon {
+  width: 52px; height: 52px;
+  background: rgba(217,119,87,0.18);
+  border: 1px solid rgba(217,119,87,0.35);
+  border-radius: 14px; display: flex; align-items: center;
+  justify-content: center; font-size: 1.4rem; margin-bottom: 1.4rem;
+}
+.why-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: #fff; margin-bottom: 0.65rem;
+}
+.why-card p { font-size: 0.84rem; color: rgba(255,255,255,0.57); line-height: 1.68; }
+
+/* ══════════════════════════════════════════════ */
+/* HOW IT WORKS                                   */
+/* ══════════════════════════════════════════════ */
+.how { padding: 6rem 3.5rem; }
+.how-timeline {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; position: relative; margin-top: 3.5rem;
+}
+.how-timeline::before {
+  content: ''; position: absolute;
+  top: 30px; left: calc(12.5% + 30px); right: calc(12.5% + 30px);
+  height: 1px; background: var(--border); z-index: 0;
+}
+.how-step { position: relative; z-index: 1; }
+.how-num {
+  width: 60px; height: 60px; background: var(--primary);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif; font-size: 1.2rem;
+  color: #fff; font-weight: 500;
+  box-shadow: 0 4px 20px rgba(15,76,92,0.25);
+  transition: background 0.3s, transform 0.3s;
+}
+.how-step:hover .how-num { background: var(--accent); transform: scale(1.08); }
+.how-step h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem;
+}
+.how-step p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+
+/* ══════════════════════════════════════════════ */
+/* TESTIMONIALS                                   */
+/* ══════════════════════════════════════════════ */
+.testimonials { padding: 6rem 3.5rem; background: var(--sand); }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.testi-card {
+  background: var(--card); border-radius: var(--radius);
+  padding: 2rem 1.8rem;
+  box-shadow: 0 4px 28px var(--border);
+  position: relative; overflow: hidden;
+  transition: transform 0.3s;
+}
+.testi-card:hover { transform: translateY(-5px); }
+.testi-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem; line-height: 1; color: var(--accent);
+  opacity: 0.18; position: absolute; top: 12px; right: 20px;
+  pointer-events: none; user-select: none;
+}
+.testi-stars { color: #F5C842; font-size: 0.85rem; margin-bottom: 1rem; }
+.testi-text {
+  font-size: 0.88rem; color: var(--text); line-height: 1.72;
+  font-style: italic; margin-bottom: 1.4rem;
+}
+.testi-author { display: flex; align-items: center; gap: 0.75rem; }
+.testi-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+.testi-name { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+.testi-loc { font-size: 0.75rem; color: var(--muted); }
+
+/* ══════════════════════════════════════════════ */
+/* FINAL CTA                                      */
+/* ══════════════════════════════════════════════ */
+.final-cta {
+  position: relative; overflow: hidden;
+  min-height: 500px; display: flex; align-items: center;
+  justify-content: center; text-align: center;
+}
+.final-cta-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1600&q=85') center/cover no-repeat;
+}
+.final-cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,40,55,0.88) 0%, rgba(15,76,92,0.78) 100%);
+}
+.final-cta-content { position: relative; z-index: 2; padding: 4rem 2rem; max-width: 640px; }
+.final-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 500;
+  color: #fff; line-height: 1.12; margin-top: 0.8rem;
+}
+.final-cta p { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.72; margin-top: 1rem; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.2rem; }
+.btn-cta-primary {
+  background: var(--accent); color: #fff;
+  padding: 0.9rem 2.1rem; border-radius: 50px;
+  font-size: 0.9rem; font-weight: 600;
+  box-shadow: 0 6px 24px rgba(217,119,87,0.4);
+  transition: all 0.2s;
+}
+.btn-cta-primary:hover { background: #c8653d; transform: translateY(-2px); }
+.btn-whatsapp {
+  background: #25D366; color: #fff;
+  padding: 0.9rem 2.1rem; border-radius: 50px;
+  font-size: 0.9rem; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+  transition: all 0.2s;
+}
+.btn-whatsapp:hover { background: #1db954; transform: translateY(-2px); }
+
+/* ══════════════════════════════════════════════ */
+/* FOOTER                                         */
+/* ══════════════════════════════════════════════ */
+footer {
+  background: #08242E; padding: 5rem 3.5rem 2rem;
+  color: rgba(255,255,255,0.6);
+}
+.footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 3rem; }
+.footer-brand {}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: #fff; margin-bottom: 1rem;
+}
+.footer-logo span { color: var(--accent); }
+.footer-tagline { font-size: 0.84rem; line-height: 1.7; max-width: 260px; color: rgba(255,255,255,0.5); }
+.footer-social { display: flex; gap: 0.6rem; margin-top: 1.4rem; }
+.social-btn {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.07); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: rgba(255,255,255,0.6);
+  transition: background 0.2s, color 0.2s;
+}
+.social-btn:hover { background: var(--accent); color: #fff; }
+.footer-col h4 {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #fff; margin-bottom: 1.2rem;
+}
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul a { font-size: 0.84rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--accent); }
+.footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.84rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.5); }
+.footer-contact-item .ic { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 3.5rem; padding-top: 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.78rem; color: rgba(255,255,255,0.35);
+}
+
+/* ─── ANIMATIONS ─────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  80% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 1100px) {
+  .pkg-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .dest-grid { grid-template-columns: 1.4fr 1fr; grid-template-rows: auto; }
+  .dest-card:first-child { grid-row: 1 / 3; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 800px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem 4rem; }
+  .hero-review { display: none; }
+  .hero-text h1 { font-size: clamp(2.4rem, 10vw, 4rem); }
+  .destinations, .packages, .why, .how, .testimonials { padding: 4rem 1.5rem; }
+  .dest-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .dest-card:first-child { grid-row: auto; }
+  .dest-card { height: 260px; }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .how-timeline { grid-template-columns: 1fr 1fr; }
+  .how-timeline::before { display: none; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .stats-bar { flex-wrap: wrap; }
+  .stat-item { min-width: 140px; border-right: none; }
+  footer { padding: 3rem 1.5rem 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-logo">Rolfam <span>Tours</span></div>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#packages">Safaris</a></li>
+    <li><a href="#packages">Excursions</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="scrollToContact()">Plan My Adventure</button>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay (simple) -->
+<div id="mobile-menu" style="display:none;position:fixed;inset:0;background:rgba(8,36,46,0.97);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:2rem;">
+  <a href="#destinations" style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;" onclick="toggleMenu()">Destinations</a>
+  <a href="#packages" style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;" onclick="toggleMenu()">Safaris</a>
+  <a href="#testimonials" style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;" onclick="toggleMenu()">Reviews</a>
+  <a href="#about" style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;" onclick="toggleMenu()">About</a>
+  <button class="btn-cta-primary" onclick="scrollToContact();toggleMenu()">Plan My Adventure</button>
+  <button onclick="toggleMenu()" style="background:none;border:none;color:rgba(255,255,255,0.5);font-size:0.9rem;cursor:pointer;margin-top:1rem;">✕ Close</button>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-tag">
+        <div class="hero-dot"></div>
+        Kenya's Premier Safari Specialist
+      </div>
+      <h1>Discover Kenya's Most<br><em>Extraordinary</em><br>Adventures</h1>
+      <p class="hero-sub">From the vast plains of the Maasai Mara to the turquoise shores of Diani — experience Kenya through expertly curated journeys that stay with you forever.</p>
+      <div class="hero-trust">
+        <div class="trust-badge"><span class="stars">★★★★★</span> 4.9 Rated</div>
+        <div class="trust-badge">· 500+ Happy Travellers</div>
+        <div class="trust-badge">· 5+ Years Experience</div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">Explore Adventures</button>
+        <button class="btn-hero-outline" onclick="scrollToContact()">Get Free Quote</button>
+      </div>
+    </div>
+    <div class="hero-review">
+      <div class="hero-review-stars">★★★★★</div>
+      <p class="hero-review-text">"The Mara migration was beyond anything I've seen. Rolfam made it absolutely seamless."</p>
+      <div class="hero-review-author">
+        <img class="hero-review-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Sarah K." loading="lazy">
+        <div class="hero-review-name"><strong>Sarah K.</strong>London, UK</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══ STATS ══════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">500+</div><div class="stat-lbl">Happy Travellers</div></div>
+  <div class="stat-item"><div class="stat-num">5★</div><div class="stat-lbl">Average Rating</div></div>
+  <div class="stat-item"><div class="stat-num">30+</div><div class="stat-lbl">Safari Packages</div></div>
+  <div class="stat-item"><div class="stat-num">5+</div><div class="stat-lbl">Years of Excellence</div></div>
+</div>
+
+<!-- ══ DESTINATIONS ════════════════════════════ -->
+<section class="destinations" id="destinations">
+  <div class="section-head reveal">
+    <div class="eyebrow">Iconic Destinations</div>
+    <h2>Kenya's Most Breathtaking<br><em style="font-style:italic;">Landscapes</em></h2>
+    <p>From savannah wilderness to coral-fringed coastlines — Kenya holds a lifetime of adventure in one extraordinary country.</p>
+  </div>
+  <div class="dest-grid reveal">
+    <!-- Large card -->
+    <div class="dest-card">
+      <img src="https://images.unsplash.com/photo-1589825743636-b70f68ea4e72?w=900&q=85" alt="Maasai Mara" loading="lazy">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-tag">Wildlife Safari</div>
+        <div class="dest-name">Maasai Mara</div>
+        <div class="dest-sub">Africa's greatest wildlife spectacle — home to the legendary Great Migration</div>
+        <div class="dest-arrow">Explore Packages →</div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="dest-card">
+      <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=85" alt="Amboseli" loading="lazy">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-tag">Elephant Country</div>
+        <div class="dest-name">Amboseli</div>
+        <div class="dest-sub">Giant elephants beneath Kilimanjaro's eternal snow</div>
+        <div class="dest-arrow">Explore Packages →</div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="dest-card">
+      <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=700&q=85" alt="Diani Beach" loading="lazy">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-tag">Coastal Paradise</div>
+        <div class="dest-name">Diani Beach</div>
+        <div class="dest-sub">White sands and warm Indian Ocean waters</div>
+        <div class="dest-arrow">Explore Packages →</div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="dest-card">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85" alt="Tsavo" loading="lazy">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-tag">Wilderness</div>
+        <div class="dest-name">Tsavo</div>
+        <div class="dest-sub">Kenya's largest park, home of the red elephants</div>
+        <div class="dest-arrow">Explore Packages →</div>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="dest-card">
+      <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=85" alt="Zanzibar" loading="lazy">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-tag">Island Escape</div>
+        <div class="dest-name">Zanzibar</div>
+        <div class="dest-sub">Ancient spice routes and impossibly clear waters</div>
+        <div class="dest-arrow">Explore Packages →</div>
+      </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="dest-card">
+      <img src="https://images.unsplash.com/photo-1515205244153-fce4e5d8239d?w=700&q=85" alt="Wasini Island" loading="lazy">
+      <div class="dest-overlay"></div>
+      <div class="dest-info">
+        <div class="dest-tag">Day Excursion</div>
+        <div class="dest-name">Wasini Island</div>
+        <div class="dest-sub">Dhow cruises and dolphin encounters at sunrise</div>
+        <div class="dest-arrow">Explore Packages →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PACKAGES ════════════════════════════════ -->
+<section class="packages" id="packages">
+  <div class="section-head reveal">
+    <div class="eyebrow">Popular Experiences</div>
+    <h2>Curated Journeys,<br><em style="font-style:italic;">Unforgettable Memories</em></h2>
+    <p>Every itinerary is crafted with care — tailored to the rhythm of Kenya's wildlife seasons and the warmth of its coastline.</p>
+  </div>
+  <div class="pkg-grid">
+
+    <!-- Package 1 -->
+    <div class="pkg-card reveal">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1601823984263-51f3b52f3440?w=600&q=80" alt="Mara Classic Safari" loading="lazy">
+        <div class="pkg-badge">Best Seller</div>
+        <div class="pkg-fav">♡</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-meta">
+          <div class="pkg-dur">⏱ 4 Days</div>
+          <div class="pkg-rating"><span class="star">★</span><span>4.9 (47)</span></div>
+        </div>
+        <div class="pkg-title">Maasai Mara Classic Safari</div>
+        <p class="pkg-desc">Track the Big Five across golden savannah. Game drives at dawn and dusk, bush sundowners, and nights in a luxury tented camp beside the Mara River.</p>
+      </div>
+      <div class="pkg-footer">
+        <div class="pkg-price">From $620 <small>/ person</small></div>
+        <button class="btn-view" onclick="scrollToContact()">View Experience</button>
+      </div>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="pkg-card reveal" style="transition-delay:0.1s">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Amboseli Elephants" loading="lazy">
+        <div class="pkg-badge">Family Favourite</div>
+        <div class="pkg-fav">♡</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-meta">
+          <div class="pkg-dur">⏱ 3 Days</div>
+          <div class="pkg-rating"><span class="star">★</span><span>4.8 (38)</span></div>
+        </div>
+        <div class="pkg-title">Amboseli Elephant Retreat</div>
+        <p class="pkg-desc">Witness Africa's largest elephant herds against the snowy backdrop of Kilimanjaro. A wildlife experience unlike any other on the continent.</p>
+      </div>
+      <div class="pkg-footer">
+        <div class="pkg-price">From $480 <small>/ person</small></div>
+        <button class="btn-view" onclick="scrollToContact()">View Experience</button>
+      </div>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="pkg-card reveal" style="transition-delay:0.2s">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80" alt="Diani Beach" loading="lazy">
+        <div class="pkg-badge">Coastal Escape</div>
+        <div class="pkg-fav">♡</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-meta">
+          <div class="pkg-dur">⏱ 5 Days</div>
+          <div class="pkg-rating"><span class="star">★</span><span>4.9 (52)</span></div>
+        </div>
+        <div class="pkg-title">Diani Beach Holiday</div>
+        <p class="pkg-desc">Unwind on one of Africa's most celebrated beaches. Crystal-clear waters, boutique beachside accommodation, and optional reef snorkelling.</p>
+      </div>
+      <div class="pkg-footer">
+        <div class="pkg-price">From $390 <small>/ person</small></div>
+        <button class="btn-view" onclick="scrollToContact()">View Experience</button>
+      </div>
+    </div>
+
+    <!-- Package 4 -->
+    <div class="pkg-card reveal" style="transition-delay:0.05s">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Tsavo Wilderness" loading="lazy">
+        <div class="pkg-badge">Adventure</div>
+        <div class="pkg-fav">♡</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-meta">
+          <div class="pkg-dur">⏱ 2 Days</div>
+          <div class="pkg-rating"><span class="star">★</span><span>4.7 (29)</span></div>
+        </div>
+        <div class="pkg-title">Tsavo East & West Explorer</div>
+        <p class="pkg-desc">Explore Kenya's largest national park — ancient lava flows, baobab forests, and the iconic red elephants who've roamed here for centuries.</p>
+      </div>
+      <div class="pkg-footer">
+        <div class="pkg-price">From $295 <small>/ person</small></div>
+        <button class="btn-view" onclick="scrollToContact()">View Experience</button>
+      </div>
+    </div>
+
+    <!-- Package 5 -->
+    <div class="pkg-card reveal" style="transition-delay:0.15s">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1515205244153-fce4e5d8239d?w=600&q=80" alt="Wasini Dhow" loading="lazy">
+        <div class="pkg-badge">Day Trip</div>
+        <div class="pkg-fav">♡</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-meta">
+          <div class="pkg-dur">⏱ 1 Day</div>
+          <div class="pkg-rating"><span class="star">★</span><span>4.9 (64)</span></div>
+        </div>
+        <div class="pkg-title">Wasini Island Dhow Cruise</div>
+        <p class="pkg-desc">Sail Swahili waters aboard a traditional wooden dhow, swim with dolphins in the open ocean, and feast on fresh seafood at the water's edge.</p>
+      </div>
+      <div class="pkg-footer">
+        <div class="pkg-price">From $120 <small>/ person</small></div>
+        <button class="btn-view" onclick="scrollToContact()">View Experience</button>
+      </div>
+    </div>
+
+    <!-- Package 6 -->
+    <div class="pkg-card reveal" style="transition-delay:0.25s">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80" alt="Zanzibar" loading="lazy">
+        <div class="pkg-badge">Island Getaway</div>
+        <div class="pkg-fav">♡</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-meta">
+          <div class="pkg-dur">⏱ 7 Days</div>
+          <div class="pkg-rating"><span class="star">★</span><span>5.0 (31)</span></div>
+        </div>
+        <div class="pkg-title">Zanzibar Spice & Shore</div>
+        <p class="pkg-desc">From the labyrinthine alleys of Stone Town to the powder-white beaches of Nungwi — a week of culture, colour, and complete coastal bliss.</p>
+      </div>
+      <div class="pkg-footer">
+        <div class="pkg-price">From $850 <small>/ person</small></div>
+        <button class="btn-view" onclick="scrollToContact()">View Experience</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ WHY CHOOSE ═══════════════════════════════ -->
+<section class="why" id="about">
+  <div class="section-head reveal">
+    <div class="eyebrow">Why Rolfam</div>
+    <h2>We Know Kenya<br><em style="font-style:italic;">Like No One Else</em></h2>
+    <p>Born and based in coastal Kenya, we bring insider knowledge and genuine passion to every journey we craft.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">🗺️</div>
+      <h3>Deep Local Expertise</h3>
+      <p>Our guides grew up in the Maasai Mara, along the Kenyan coast, and throughout Tsavo. That lived knowledge is something no algorithm can replicate.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.1s">
+      <div class="why-icon">✍️</div>
+      <h3>Personalised Itineraries</h3>
+      <p>No two travellers are alike. We build every journey around your pace, your interests, and the experiences that matter most to you.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.2s">
+      <div class="why-icon">🤝</div>
+      <h3>Trusted, Vetted Guides</h3>
+      <p>Every guide in our network is personally selected, licensed, and trained to deliver a safe, enriching, and memorable experience.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.3s">
+      <div class="why-icon">📞</div>
+      <h3>24/7 On-Trip Support</h3>
+      <p>We're reachable at any hour. From a flat tyre in the bush to a flight delay — your journey is our responsibility, start to finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ═════════════════════════════ -->
+<section class="how">
+  <div class="section-head reveal">
+    <div class="eyebrow">Simple Process</div>
+    <h2>Your Safari Starts<br><em style="font-style:italic;">Here</em></h2>
+    <p>Getting started is effortless. From your first message to your first game drive, we handle every detail.</p>
+  </div>
+  <div class="how-timeline">
+    <div class="how-step reveal">
+      <div class="how-num">01</div>
+      <h3>Choose an Experience</h3>
+      <p>Browse our safari and coastal packages, or tell us your dream trip — we'll suggest the perfect match.</p>
+    </div>
+    <div class="how-step reveal" style="transition-delay:0.1s">
+      <div class="how-num">02</div>
+      <h3>Request Your Quote</h3>
+      <p>Share your dates and group size. We'll send a personalised itinerary and transparent pricing within 24 hours.</p>
+    </div>
+    <div class="how-step reveal" style="transition-delay:0.2s">
+      <div class="how-num">03</div>
+      <h3>Confirm Your Trip</h3>
+      <p>Finalise the details and we take care of all logistics — accommodation, transport, permits, and more.</p>
+    </div>
+    <div class="how-step reveal" style="transition-delay:0.3s">
+      <div class="how-num">04</div>
+      <h3>Enjoy Kenya</h3>
+      <p>All that's left is to arrive, breathe in the African air, and let your extraordinary adventure begin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="section-head reveal">
+    <div class="eyebrow">Guest Stories</div>
+    <h2>Travellers Who've<br><em style="font-style:italic;">Lived It</em></h2>
+    <p>Don't take our word for it. Here's what our guests say about travelling with Rolfam.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The Mara migration was unlike anything I could have imagined. Our guide David knew exactly where to position us — we watched thousands of wildebeest cross the river for nearly two hours. Rolfam is worth every penny.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah K." loading="lazy">
+        <div>
+          <div class="testi-name">Sarah Kimani</div>
+          <div class="testi-loc">London, United Kingdom</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:0.1s">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The Wasini dhow cruise was the highlight of our honeymoon. Swimming with wild dolphins in the open ocean, then a seafood lunch on a tiny island — magical doesn't cover it. We're already planning our return.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James T." loading="lazy">
+        <div>
+          <div class="testi-name">James & Amy Turner</div>
+          <div class="testi-loc">Sydney, Australia</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:0.2s">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">We were a family of five including three young children. Rolfam customised every detail — pace, accommodation, meal times. The kids still talk about the elephant encounter in Amboseli six months later.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Priya R." loading="lazy">
+        <div>
+          <div class="testi-name">Priya Rajasekaran</div>
+          <div class="testi-loc">Dubai, UAE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ════════════════════════════════ -->
+<section class="final-cta" id="contact">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-overlay"></div>
+  <div class="final-cta-content reveal">
+    <div class="eyebrow" style="justify-content:center;color:rgba(255,255,255,0.7);">Start Your Journey</div>
+    <h2>Ready to Explore Kenya?</h2>
+    <p>Let's craft your perfect safari or coastal escape — tailored entirely to you. No templates, no shortcuts.</p>
+    <div class="cta-btns">
+      <a href="mailto:info@rolfamtoursandtravel.co.ke" class="btn-cta-primary">Get a Free Quote</a>
+      <a href="https://wa.me/254700000000?text=Hi%20Rolfam!%20I'd%20like%20to%20plan%20a%20trip%20to%20Kenya." target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652C8.077 23.316 10.033 23.8 12.019 23.8h.006c6.554 0 11.89-5.335 11.893-11.893.002-3.181-1.237-6.166-3.398-8.458zM12.045 21.785h-.005c-1.786-.001-3.535-.48-5.059-1.385l-.363-.215-3.762.981.999-3.641-.237-.374a9.832 9.832 0 01-1.512-5.239c.002-5.445 4.447-9.875 9.918-9.875 2.649 0 5.138 1.031 7.011 2.902a9.822 9.822 0 012.902 6.993c-.003 5.448-4.448 9.853-9.892 9.853zm5.437-7.387c-.297-.149-1.758-.867-2.031-.967-.271-.099-.469-.148-.669.15-.2.295-.77.966-.944 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.148-.172.198-.296.297-.495.099-.198.05-.371-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Rolfam <span>Tours & Travel</span></div>
+      <p class="footer-tagline">Kenya's trusted safari and coastal travel specialists. Based in Mtwapa, serving adventurers from around the world since 2019.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+        <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+        <a href="#" class="social-btn" aria-label="TripAdvisor">⭐</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="#">Maasai Mara</a></li>
+        <li><a href="#">Amboseli</a></li>
+        <li><a href="#">Tsavo East</a></li>
+        <li><a href="#">Tsavo West</a></li>
+        <li><a href="#">Diani Beach</a></li>
+        <li><a href="#">Zanzibar</a></li>
+        <li><a href="#">Wasini Island</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Experiences</h4>
+      <ul>
+        <li><a href="#">Luxury Safaris</a></li>
+        <li><a href="#">Budget Safaris</a></li>
+        <li><a href="#">Beach Holidays</a></li>
+        <li><a href="#">Coastal Excursions</a></li>
+        <li><a href="#">Shimba Hills Tours</a></li>
+        <li><a href="#">Mombasa City Tours</a></li>
+        <li><a href="#">Group Travel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" id="contact-info">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><span class="ic">📍</span><span>Mtwapa, Kilifi County<br>Kenya</span></div>
+      <div class="footer-contact-item"><span class="ic">📞</span><span>+254 700 000 000</span></div>
+      <div class="footer-contact-item"><span class="ic">✉️</span><span>info@rolfamtoursandtravel.co.ke</span></div>
+      <div class="footer-contact-item"><span class="ic">⏰</span><span>Mon–Sat: 8am – 7pm EAT</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Rolfam Tours & Travel. All rights reserved.</span>
+    <span>Crafted with ♥ in Kenya</span>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ════════════════════════════════════ -->
+<script>
+// Nav scroll behaviour
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Hero parallax
+const heroBg = document.getElementById('heroBg');
+setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+// Mobile menu
+function toggleMenu() {
+  const m = document.getElementById('mobile-menu');
+  m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+}
+
+// Scroll to contact
+function scrollToContact() {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Stagger children in pkg-grid
+const pkgCards = document.querySelectorAll('.pkg-card');
+pkgCards.forEach((card, i) => {
+  card.style.transitionDelay = (i % 3 * 0.1) + 's';
+});
+</script>
+
+</body>
+</html>
