@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rolfam Tours and Travel and Travel — Kenya Safari Adventures</title>
+<meta name="description" content="Rolfam Tours and Travel and Travel — Kenya safari specialists since 2019. Mombasa-based operators offering Maasai Mara, Tsavo, Amboseli, Samburu and coastal experiences."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --orange:#F2A33C;
+  --orange-deep:#E68A1F;
+  --yellow:#F7D43A;
+  --yellow-hover:#F2C521;
+  --cream:#E8DCC4;
+  --cream-soft:#EFE6D2;
+  --dark:#2B2418;
+  --muted:#6B5E4A;
+  --line:rgba(43,36,24,0.12);
+  --white:#FFFFFF;
+  --shadow:0 8px 24px rgba(43,36,24,0.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.2;color:var(--dark)}
+
+/* ── Top utility bar ── */
+.topbar{background:var(--orange);color:#fff;font-size:0.85rem;padding:0.55rem 1.5rem}
+.topbar-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.6rem}
+.topbar-social{display:flex;gap:0.9rem;align-items:center}
+.topbar-social a{width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.15);transition:background .2s}
+.topbar-social a:hover{background:rgba(255,255,255,0.3)}
+.topbar-info{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap}
+.topbar-info span{display:inline-flex;align-items:center;gap:0.45rem}
+.topbar-info .ico{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--orange);border-radius:50%;font-size:0.7rem;font-weight:700}
+
+/* ── Nav ── */
+.nav{background:var(--cream-soft);padding:0.5rem 1.5rem;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 var(--line)}
+.nav-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:-20px;margin-bottom:-20px}
+.logo img{width:108px;height:108px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+.nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
+.nav-links a{font-family:'Poppins',sans-serif;font-weight:600;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--dark);padding:0.4rem 0;border-bottom:2px solid transparent;transition:all .2s}
+.nav-links a:hover, .nav-links a.active{color:var(--orange);border-bottom-color:var(--orange)}
+.nav-phone{display:flex;align-items:center;gap:0.55rem;font-family:'Poppins',sans-serif;font-weight:700;color:var(--dark);font-size:1rem}
+.nav-phone .pico{width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center}
+.nav-toggle{display:none;background:none;font-size:1.6rem;color:var(--dark)}
+
+/* ── Hero ── */
+.hero{position:relative;height:78vh;min-height:520px;background:url('hero-cheetah.png') center/cover;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.45) 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 1.5rem;max-width:1100px}
+.hero h1{color:#fff;font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero h1::before,.hero h1::after{content:'';width:40px;height:2px;background:#fff;display:inline-block}
+.hero .cta{margin-top:2rem;display:inline-block;background:var(--yellow);color:var(--dark);font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.06em;padding:0.95rem 2.4rem;border-radius:999px;transition:all .2s;box-shadow:0 6px 16px rgba(0,0,0,0.2)}
+.hero .cta:hover{background:var(--yellow-hover);transform:translateY(-2px)}
+
+/* ── Section base ── */
+section{padding:5rem 1.5rem}
+.container{max-width:1280px;margin:0 auto}
+.section-eyebrow{font-family:'Poppins',sans-serif;font-weight:600;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:0.7rem}
+.section-title{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:1.2rem}
+.section-title .accent{color:var(--orange)}
+
+/* ── Intro split ── */
+.intro{background:var(--cream)}
+.intro-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3.5rem;align-items:center}
+.intro p{color:var(--muted);margin-bottom:1rem;font-size:1rem}
+.intro p strong{color:var(--dark)}
+.intro-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.intro-imgs img{border-radius:6px;height:260px;object-fit:cover;width:100%;box-shadow:var(--shadow)}
+.intro-imgs img:first-child{transform:translateY(-20px)}
+
+/* ── Packages ── */
+.packages{background:var(--cream-soft)}
+.pkg-head{text-align:center;margin-bottom:3rem}
+.pkg-head .section-title{margin-inline:auto;max-width:760px}
+.pkg-head p{color:var(--muted);max-width:640px;margin:0 auto}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.pkg-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(43,36,24,0.18)}
+.pkg-img-wrap{position:relative;height:220px;overflow:hidden}
+.pkg-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pkg-card:hover .pkg-img-wrap img{transform:scale(1.08)}
+.pkg-badge{position:absolute;top:14px;left:14px;background:var(--orange);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.35rem 0.8rem;border-radius:3px}
+.pkg-body{padding:1.4rem;display:flex;flex-direction:column;gap:0.7rem;flex:1}
+.pkg-title{font-size:1.1rem;font-weight:700;color:var(--dark);min-height:2.6em}
+.pkg-meta{display:flex;justify-content:space-between;font-size:0.82rem;color:var(--muted);font-weight:600;padding-bottom:0.7rem;border-bottom:1px dashed var(--line)}
+.pkg-desc{color:var(--muted);font-size:0.9rem;flex:1}
+.pkg-foot{display:flex;justify-content:space-between;align-items:center;margin-top:0.5rem}
+.pkg-rate{color:var(--orange);font-weight:700;font-size:0.9rem}
+.btn-pill-sm{background:var(--yellow);color:var(--dark);font-family:'Poppins',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.08em;padding:0.6rem 1.3rem;border-radius:999px;transition:all .2s}
+.btn-pill-sm:hover{background:var(--yellow-hover)}
+
+/* ── Why ── */
+.why{background:var(--cream)}
+.why-head{text-align:center;margin-bottom:3rem}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.why-card{background:#fff;padding:2rem 1.5rem;border-radius:8px;text-align:center;border-top:4px solid var(--orange);box-shadow:var(--shadow)}
+.why-ico{width:64px;height:64px;border-radius:50%;background:var(--cream-soft);color:var(--orange);font-size:1.7rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.why-card h4{font-size:1.05rem;margin-bottom:0.5rem}
+.why-card p{color:var(--muted);font-size:0.88rem}
+
+/* ── CTA strip ── */
+.cta-strip{background:linear-gradient(rgba(43,36,24,0.65),rgba(43,36,24,0.65)),url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1800&q=85') center/cover;color:#fff;text-align:center;padding:5rem 1.5rem}
+.cta-strip h2{color:#fff;font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:1rem}
+.cta-strip p{max-width:620px;margin:0 auto 2rem;opacity:0.92}
+.cta-strip .cta{display:inline-block;background:var(--yellow);color:var(--dark);font-weight:700;font-family:'Poppins',sans-serif;padding:0.95rem 2.4rem;border-radius:999px;letter-spacing:0.06em;font-size:0.9rem;transition:all .2s}
+.cta-strip .cta:hover{background:var(--yellow-hover);transform:translateY(-2px)}
+
+/* ── Contact strip ── */
+.contact{background:var(--cream-soft)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.contact-card{background:#fff;padding:2rem;border-radius:8px;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow)}
+.contact-ico{width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-card h4{font-size:1rem;margin-bottom:0.3rem}
+.contact-card p{color:var(--muted);font-size:0.9rem}
+
+/* ── Footer ── */
+footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
+.foot-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem}
+.foot-grid h5{color:#fff;font-family:'Poppins',sans-serif;font-size:1rem;margin-bottom:1rem;font-weight:700}
+.foot-grid p,.foot-grid li{font-size:0.88rem;margin-bottom:0.55rem;color:#bdac90}
+.foot-grid a:hover{color:var(--orange)}
+.foot-grid ul{list-style:none}
+.foot-bottom{max-width:1280px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);text-align:center;font-size:0.82rem;color:#8a7a60}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .intro-grid{grid-template-columns:1fr;gap:2rem}
+  .foot-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .nav-links,.nav-phone{display:none}
+  .nav-toggle{display:block}
+  .pkg-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .topbar-info{font-size:0.78rem;gap:0.9rem}
+  .hero h1::before,.hero h1::after{width:24px}
+  section{padding:3.5rem 1.2rem}
+  .logo img{width:84px;height:84px;margin:-10px 0}
+}
+#mobile-menu{display:none;position:fixed;inset:0;background:rgba(31,26,18,0.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem}
+#mobile-menu a{color:#fff;font-family:'Poppins',sans-serif;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.08em}
+#mobile-menu .close{position:absolute;top:1.5rem;right:1.5rem;font-size:2rem;color:#fff;background:none}
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Tripadvisor">◎</a>
+      <a href="#" aria-label="YouTube">▶</a>
+    </div>
+    <div class="topbar-info">
+      <span><span class="ico">📍</span> Mombasa, Kenya | Kitengela Branch Opening Soon</span>
+      <span><span class="ico">📞</span> +254 714 306 991</span>
+      <span><span class="ico">✉</span> info@rolfamtours.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="Rolfam Tours and Travel"><img src="logo.png" alt="Rolfam Tours Logo"></a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">HOME</a></li>
+      <li><a href="#packages">TOUR &amp; SAFARI</a></li>
+      <li><a href="#excursions">EXCURSIONS</a></li>
+      <li><a href="#about">TRAVEL GUIDE</a></li>
+      <li><a href="#contact">CONTACT US</a></li>
+    </ul>
+    <div class="nav-phone"><span class="pico">📞</span> +254 714 306 991</div>
+    <button class="nav-toggle" onclick="document.getElementById('mobile-menu').style.display='flex'">☰</button>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <button class="close" onclick="this.parentElement.style.display='none'">×</button>
+  <a href="#" onclick="document.getElementById('mobile-menu').style.display='none'">HOME</a>
+  <a href="#packages" onclick="document.getElementById('mobile-menu').style.display='none'">TOUR &amp; SAFARI</a>
+  <a href="#excursions" onclick="document.getElementById('mobile-menu').style.display='none'">EXCURSIONS</a>
+  <a href="#about" onclick="document.getElementById('mobile-menu').style.display='none'">TRAVEL GUIDE</a>
+  <a href="#contact" onclick="document.getElementById('mobile-menu').style.display='none'">CONTACT US</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>"Where Adventure Meets the Wild – Kenya Safaris"</h1>
+    <a href="#packages" class="cta">READ MORE</a>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="intro">
+  <div class="container intro-grid">
+    <div>
+      <h2 class="section-title"><span class="accent">From the Plains to the Peaks</span> – Safari Adventures in Kenya</h2>
+      <p><strong>Rolfam Tours and Travel and Travel</strong> has been operating in Kenya with well-traveled guides and crew who have spent over a decade leading inbound tours and safaris across East Africa. Based on the coast in Mombasa, we specialise in tailored Kenyan journeys — from the great migration in the Maasai Mara, to the elephant herds of Amboseli under Kilimanjaro, the red dust of Tsavo, and the white sands of Diani.</p>
+      <p>Whether you're after a budget road safari, a fly-in lodge experience, or a hand-tailored honeymoon itinerary, our team handles every detail — transport, lodging, park fees, guides — so you can focus on the wild.</p>
+      <a href="#packages" class="cta" style="display:inline-block;margin-top:1rem;background:var(--yellow);color:var(--dark);font-weight:700;font-family:'Poppins',sans-serif;padding:0.85rem 2rem;border-radius:999px;letter-spacing:0.06em;font-size:0.85rem">VIEW SAFARIS</a>
+    </div>
+    <div class="intro-imgs">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=85" alt="Cheetahs on the Mara">
+      <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=85" alt="Lions in Tsavo">
+    </div>
+  </div>
+</section>
+
+<!-- Packages -->
+<section class="packages" id="packages">
+  <div class="container">
+    <div class="pkg-head">
+      <div class="section-eyebrow">Our Packages</div>
+      <h2 class="section-title">Popular Kenya &amp; East Africa <span class="accent">Safari Packages</span></h2>
+      <p>Hand-picked itineraries covering Kenya's iconic parks, the Tanzanian northern circuit, and the white-sand escape of Zanzibar.</p>
+    </div>
+    <div class="pkg-grid">
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=85" alt="Tsavo East, West &amp; Amboseli Safari" loading="lazy">
+        <span class="pkg-badge">Best Seller</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Tsavo East, West &amp; Amboseli Safari</h3>
+        <div class="pkg-meta"><span>⏱ 5 Days</span><span class="pkg-dep">📍 Departing Mombasa</span></div>
+        <p class="pkg-desc">A classic southern Kenya road circuit — the baobab plains and red elephants of Tsavo East, the rugged wilderness of Tsavo West, and Amboseli&#x27;s iconic herds beneath Kilimanjaro.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (47)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=701&q=85" alt="Tsavo East, West, Voyager Ziwani &amp; Amboseli" loading="lazy">
+        <span class="pkg-badge">Lodge Stay</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Tsavo East, West, Voyager Ziwani &amp; Amboseli</h3>
+        <div class="pkg-meta"><span>⏱ 5 Days</span><span class="pkg-dep">📍 Departing Mombasa</span></div>
+        <p class="pkg-desc">Game-rich drives through Tsavo East and West paired with two nights at Voyager Ziwani, a tented camp on the edge of a private wildlife sanctuary bordering Tsavo West.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.8 (32)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=702&q=85" alt="Tsavo West, Amboseli &amp; Taita Hills Saltlick" loading="lazy">
+        <span class="pkg-badge">Special Offer</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Tsavo West, Amboseli &amp; Taita Hills Saltlick</h3>
+        <div class="pkg-meta"><span>⏱ 4 Days</span><span class="pkg-dep">📍 Departing Mombasa</span></div>
+        <p class="pkg-desc">A short southern circuit with a stay at the famous Saltlick Lodge — stilted rooms above the waterhole where elephant, buffalo and antelope gather day and night.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.8 (29)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=703&q=85" alt="Aberdares, Mara &amp; Lake Nakuru" loading="lazy">
+        <span class="pkg-badge">Rift Valley</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Aberdares, Mara &amp; Lake Nakuru</h3>
+        <div class="pkg-meta"><span>⏱ 5 Days</span><span class="pkg-dep">📍 Departing Nairobi</span></div>
+        <p class="pkg-desc">A Rift Valley grand tour — misty Aberdares highlands, the flamingo-fringed shores of Lake Nakuru, and the wildlife-packed plains of the Maasai Mara.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (44)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=704&q=85" alt="Wildebeest Migration Safari" loading="lazy">
+        <span class="pkg-badge">Great Migration</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Wildebeest Migration Safari</h3>
+        <div class="pkg-meta"><span>⏱ 4 Days</span><span class="pkg-dep">📍 Departing Nairobi</span></div>
+        <p class="pkg-desc">Time it right and witness the thundering crossings of the Great Migration through the Maasai Mara, with a stop at Lake Nakuru&#x27;s birdlife on the way back.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (51)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=85" alt="Best of Aberdares Safari" loading="lazy">
+        <span class="pkg-badge">Highlands</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Best of Aberdares Safari</h3>
+        <div class="pkg-meta"><span>⏱ 7 Days</span><span class="pkg-dep">📍 Departing Mombasa</span></div>
+        <p class="pkg-desc">A week threading through Samburu&#x27;s northern frontier, the cool Aberdares forests, Lake Nakuru&#x27;s rhinos, and the unmatched wildlife theatre of the Maasai Mara.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 5.0 (22)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=701&q=85" alt="Samburu, Lake Nakuru &amp; Masai Mara" loading="lazy">
+        <span class="pkg-badge">Zebra Safari</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Samburu, Lake Nakuru &amp; Masai Mara</h3>
+        <div class="pkg-meta"><span>⏱ 6 Days</span><span class="pkg-dep">📍 Departing Nairobi</span></div>
+        <p class="pkg-desc">Three contrasting parks in one trip — Samburu&#x27;s reticulated giraffes and Grevy&#x27;s zebras, Nakuru&#x27;s lakeshore wildlife, and the Mara&#x27;s signature plains.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.8 (37)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=702&q=85" alt="Ngutuni, Amboseli, Tsavo West &amp; Lions Bluff" loading="lazy">
+        <span class="pkg-badge">Lions Bluff</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Ngutuni, Amboseli, Tsavo West &amp; Lions Bluff</h3>
+        <div class="pkg-meta"><span>⏱ 5 Days</span><span class="pkg-dep">📍 Departing Mombasa</span></div>
+        <p class="pkg-desc">Stay perched above the Lumo Conservancy at the cliff-top Lions Bluff Lodge, with game drives through Ngutuni, Amboseli and Tsavo West.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (28)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=703&q=85" alt="Honeymoon Safari" loading="lazy">
+        <span class="pkg-badge">Honeymoon</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Honeymoon Safari</h3>
+        <div class="pkg-meta"><span>⏱ 7 Days</span><span class="pkg-dep">📍 Tailored Itinerary</span></div>
+        <p class="pkg-desc">A romantic week for two — private game drives through Samburu, the Aberdares, Lake Nakuru and the Maasai Mara, with intimate lodges and candlelit bush dinners.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 5.0 (26)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=704&q=85" alt="Bush to Beach Safari" loading="lazy">
+        <span class="pkg-badge">Grand Tour</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Bush to Beach Safari</h3>
+        <div class="pkg-meta"><span>⏱ 13 Days</span><span class="pkg-dep">📍 Departing Nairobi</span></div>
+        <p class="pkg-desc">The full Kenyan story — Lake Bogoria, Nakuru, the Maasai Mara, Naivasha, Amboseli, Tsavo West and Voyager Ziwani, finishing at Taita Hills Saltlick before the coast.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (18)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85" alt="Tarangire, Ngorongoro &amp; Manyara" loading="lazy">
+        <span class="pkg-badge">Tanzania</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Tarangire, Ngorongoro &amp; Manyara</h3>
+        <div class="pkg-meta"><span>⏱ 5 Days</span><span class="pkg-dep">📍 Tanzania</span></div>
+        <p class="pkg-desc">Northern Tanzania&#x27;s finest — Tarangire&#x27;s elephant herds, the wildlife wonder of the Ngorongoro Crater, and the tree-climbing lions of Lake Manyara.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (33)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card">
+      <div class="pkg-img-wrap">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=701&q=85" alt="Zanzibar Island Escape" loading="lazy">
+        <span class="pkg-badge">Island Escape</span>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Zanzibar Island Escape</h3>
+        <div class="pkg-meta"><span>⏱ 3 Days</span><span class="pkg-dep">📍 Tailored Itinerary</span></div>
+        <p class="pkg-desc">A short hop across to the Spice Island — Stone Town&#x27;s history, dhow sunset cruises and barefoot days on the powdery white sand of the east coast.</p>
+        <div class="pkg-foot">
+          <span class="pkg-rate">★ 4.9 (41)</span>
+          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+        </div>
+      </div>
+    </article></div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why" id="about">
+  <div class="container">
+    <div class="why-head">
+      <div class="section-eyebrow">Why Choose Us</div>
+      <h2 class="section-title">Travel With <span class="accent">Confidence</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-ico">🦁</div><h4>Expert Local Guides</h4><p>Driver-guides with 10+ years on Kenya's safari circuits.</p></div>
+      <div class="why-card"><div class="why-ico">🛡️</div><h4>Licensed &amp; Insured</h4><p>Fully bonded operator with comprehensive passenger cover.</p></div>
+      <div class="why-card"><div class="why-ico">💰</div><h4>Honest Pricing</h4><p>Transparent quotes — no hidden fees, no last-minute surprises.</p></div>
+      <div class="why-card"><div class="why-ico">📞</div><h4>24/7 Support</h4><p>Real humans on call before, during and after your trip.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip -->
+<section class="cta-strip" id="excursions">
+  <h2>Ready for Your Kenya Adventure?</h2>
+  <p>Tell us when you'd like to travel and what you want to see — we'll build the safari around you.</p>
+  <a href="#contact" class="cta">REQUEST A QUOTE</a>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="why-head">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Plan Your <span class="accent">Safari Today</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="contact-ico">📍</div><div><h4>Visit Us</h4><p>Mombasa, Kenya<br><em style="color:var(--orange);font-style:normal;font-weight:600">Kitengela branch — opening soon</em></p></div></div>
+      <div class="contact-card"><div class="contact-ico">📞</div><div><h4>Call Us</h4><p>+254 714 306 991<br>+254 715 790 09</p></div></div>
+      <div class="contact-card"><div class="contact-ico">✉</div><div><h4>Email Us</h4><p>info@rolfamtours.com<br>bookings@rolfamtours.com</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h5>Rolfam Tours and Travel and Travel</h5>
+      <p>Kenya safari specialists based in Mombasa. Tailored journeys across the Maasai Mara, Tsavo, Amboseli, Samburu, the Rift Valley lakes and the Swahili coast.</p>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#packages">Safaris</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Top Safaris</h5>
+      <ul>
+        <li><a href="#packages">Maasai Mara Migration</a></li>
+        <li><a href="#packages">Tsavo &amp; Amboseli</a></li>
+        <li><a href="#packages">Honeymoon Safari</a></li>
+        <li><a href="#packages">Bush to Beach</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <p>📍 Mombasa, Kenya<br>📍 Kitengela (opening soon)</p>
+      <p>📞 +254 714 306 991</p>
+      <p>✉ info@rolfamtours.com</p>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2026 Rolfam Tours and Travel and Travel. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
