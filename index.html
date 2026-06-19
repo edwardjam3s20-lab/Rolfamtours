@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rolfam Tours and Travel and Travel — Kenya Safari Adventures</title>
-<meta name="description" content="Rolfam Tours and Travel and Travel — Kenya safari specialists since 2019. Mombasa-based operators offering Maasai Mara, Tsavo, Amboseli, Samburu and coastal experiences."/>
+<title>Rolfam Tours and Travel — Kenya Safari Adventures</title>
+<meta name="description" content="Rolfam Tours and Travel — Kenya safari specialists since 2019. Mombasa-based operators offering Maasai Mara, Tsavo, Amboseli, Samburu and coastal experiences."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -151,6 +151,35 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
 #mobile-menu{display:none;position:fixed;inset:0;background:rgba(31,26,18,0.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem}
 #mobile-menu a{color:#fff;font-family:'Poppins',sans-serif;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.08em}
 #mobile-menu .close{position:absolute;top:1.5rem;right:1.5rem;font-size:2rem;color:#fff;background:none}
+
+/* Read-more modal */
+.pkg-read{border:none;cursor:pointer;font-family:inherit}
+.modal-backdrop{position:fixed;inset:0;background:rgba(20,15,10,0.72);display:none;align-items:flex-start;justify-content:center;z-index:9000;padding:40px 16px;overflow-y:auto}
+.modal-backdrop.open{display:flex}
+.modal{background:#fff;max-width:820px;width:100%;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.4);overflow:hidden;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.modal-head{position:relative;padding:22px 28px;background:linear-gradient(135deg,var(--orange),#d8862a);color:#fff}
+.modal-head h3{margin:0;font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:700;padding-right:40px}
+.modal-head .mh-sub{font-size:.9rem;opacity:.9;margin-top:4px}
+.modal-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.2);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:rgba(255,255,255,.35)}
+.modal-body{padding:24px 28px 28px;max-height:70vh;overflow-y:auto;color:var(--dark);line-height:1.6}
+.modal-body h4{font-family:'Poppins',sans-serif;color:var(--orange);margin:18px 0 6px;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.modal-body p{margin:0 0 10px;font-size:.95rem;color:#3b3225}
+.modal-foot{padding:16px 28px 22px;border-top:1px solid #efe7d8;display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.modal-foot a{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.05em}
+.modal-foot .mf-wa{background:#25D366;color:#fff}
+.modal-foot .mf-call{background:var(--orange);color:#fff}
+.modal-foot a:hover{filter:brightness(.95)}
+
+/* Floating WhatsApp button */
+.wa-fab{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:8000;text-decoration:none;transition:transform .2s}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab svg{width:32px;height:32px;fill:#fff}
+.wa-fab::after{content:"Chat with us";position:absolute;right:72px;background:#2B2418;color:#fff;padding:8px 14px;border-radius:8px;font-size:.8rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;font-family:'Open Sans',sans-serif}
+.wa-fab:hover::after{opacity:1}
+@media(max-width:600px){.wa-fab{width:54px;height:54px;right:16px;bottom:16px}.wa-fab svg{width:28px;height:28px}.wa-fab::after{display:none}}
+
 </style>
 </head>
 <body>
@@ -209,7 +238,7 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
   <div class="container intro-grid">
     <div>
       <h2 class="section-title"><span class="accent">From the Plains to the Peaks</span> – Safari Adventures in Kenya</h2>
-      <p><strong>Rolfam Tours and Travel and Travel</strong> has been operating in Kenya with well-traveled guides and crew who have spent over a decade leading inbound tours and safaris across East Africa. Based on the coast in Mombasa, we specialise in tailored Kenyan journeys — from the great migration in the Maasai Mara, to the elephant herds of Amboseli under Kilimanjaro, the red dust of Tsavo, and the white sands of Diani.</p>
+      <p><strong>Rolfam Tours and Travel</strong> has been operating in Kenya with well-traveled guides and crew who have spent over a decade leading inbound tours and safaris across East Africa. Based on the coast in Mombasa, we specialise in tailored Kenyan journeys — from the great migration in the Maasai Mara, to the elephant herds of Amboseli under Kilimanjaro, the red dust of Tsavo, and the white sands of Diani.</p>
       <p>Whether you're after a budget road safari, a fly-in lodge experience, or a hand-tailored honeymoon itinerary, our team handles every detail — transport, lodging, park fees, guides — so you can focus on the wild.</p>
       <a href="#packages" class="cta" style="display:inline-block;margin-top:1rem;background:var(--yellow);color:var(--dark);font-weight:700;font-family:'Poppins',sans-serif;padding:0.85rem 2rem;border-radius:999px;letter-spacing:0.06em;font-size:0.85rem">VIEW SAFARIS</a>
     </div>
@@ -231,7 +260,7 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
     <div class="pkg-grid">
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=85" alt="Tsavo East, West &amp; Amboseli Safari" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/5-Days-Tsavo-East-west-Voyager-Ziwani-and-Amboseli-safari.jpg" alt="Tsavo East, West &amp; Amboseli Safari" loading="lazy">
         <span class="pkg-badge">Best Seller</span>
       </div>
       <div class="pkg-body">
@@ -240,14 +269,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">A classic southern Kenya road circuit — the baobab plains and red elephants of Tsavo East, the rugged wilderness of Tsavo West, and Amboseli&#x27;s iconic herds beneath Kilimanjaro.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (47)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="tsavo-east-west-amboseli">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=701&q=85" alt="Tsavo East, West, Voyager Ziwani &amp; Amboseli" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/5-Days-Tsavo-East-west-Voyager-Ziwani-and-Amboseli-safari-1.jpg" alt="Tsavo East, West, Voyager Ziwani &amp; Amboseli" loading="lazy">
         <span class="pkg-badge">Lodge Stay</span>
       </div>
       <div class="pkg-body">
@@ -256,14 +285,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">Game-rich drives through Tsavo East and West paired with two nights at Voyager Ziwani, a tented camp on the edge of a private wildlife sanctuary bordering Tsavo West.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.8 (32)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="tsavo-voyager-ziwani">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=702&q=85" alt="Tsavo West, Amboseli &amp; Taita Hills Saltlick" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/4-Days-Tsavo-West-Amboseli-Taita-Hills-Saltlick.jpg" alt="Tsavo West, Amboseli &amp; Taita Hills Saltlick" loading="lazy">
         <span class="pkg-badge">Special Offer</span>
       </div>
       <div class="pkg-body">
@@ -272,14 +301,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">A short southern circuit with a stay at the famous Saltlick Lodge — stilted rooms above the waterhole where elephant, buffalo and antelope gather day and night.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.8 (29)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="tsavo-west-amboseli-saltlick">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=703&q=85" alt="Aberdares, Mara &amp; Lake Nakuru" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/5-Days-Aberdares-Mara-Nakuru.jpg" alt="Aberdares, Mara &amp; Lake Nakuru" loading="lazy">
         <span class="pkg-badge">Rift Valley</span>
       </div>
       <div class="pkg-body">
@@ -288,14 +317,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">A Rift Valley grand tour — misty Aberdares highlands, the flamingo-fringed shores of Lake Nakuru, and the wildlife-packed plains of the Maasai Mara.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (44)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="aberdares-mara-nakuru">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=704&q=85" alt="Wildebeest Migration Safari" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/4-Days-Wildebeest-Safari.jpg" alt="Wildebeest Migration Safari" loading="lazy">
         <span class="pkg-badge">Great Migration</span>
       </div>
       <div class="pkg-body">
@@ -304,14 +333,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">Time it right and witness the thundering crossings of the Great Migration through the Maasai Mara, with a stop at Lake Nakuru&#x27;s birdlife on the way back.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (51)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="wildebeest-migration">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=85" alt="Best of Aberdares Safari" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/7-Days-Best-of-Aberdares-Safari.jpg" alt="Best of Aberdares Safari" loading="lazy">
         <span class="pkg-badge">Highlands</span>
       </div>
       <div class="pkg-body">
@@ -320,14 +349,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">A week threading through Samburu&#x27;s northern frontier, the cool Aberdares forests, Lake Nakuru&#x27;s rhinos, and the unmatched wildlife theatre of the Maasai Mara.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 5.0 (22)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="best-of-aberdares">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=701&q=85" alt="Samburu, Lake Nakuru &amp; Masai Mara" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/Amboseli-national-park.jpg" alt="Samburu, Lake Nakuru &amp; Masai Mara" loading="lazy">
         <span class="pkg-badge">Zebra Safari</span>
       </div>
       <div class="pkg-body">
@@ -336,14 +365,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">Three contrasting parks in one trip — Samburu&#x27;s reticulated giraffes and Grevy&#x27;s zebras, Nakuru&#x27;s lakeshore wildlife, and the Mara&#x27;s signature plains.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.8 (37)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="samburu-nakuru-mara">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=702&q=85" alt="Ngutuni, Amboseli, Tsavo West &amp; Lions Bluff" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/lion_bluff-1.jpg" alt="Ngutuni, Amboseli, Tsavo West &amp; Lions Bluff" loading="lazy">
         <span class="pkg-badge">Lions Bluff</span>
       </div>
       <div class="pkg-body">
@@ -352,14 +381,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">Stay perched above the Lumo Conservancy at the cliff-top Lions Bluff Lodge, with game drives through Ngutuni, Amboseli and Tsavo West.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (28)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="ngutuni-lions-bluff">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=703&q=85" alt="Honeymoon Safari" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2023/03/honeymoon-safari.jpg" alt="Honeymoon Safari" loading="lazy">
         <span class="pkg-badge">Honeymoon</span>
       </div>
       <div class="pkg-body">
@@ -368,14 +397,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">A romantic week for two — private game drives through Samburu, the Aberdares, Lake Nakuru and the Maasai Mara, with intimate lodges and candlelit bush dinners.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 5.0 (26)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="honeymoon-safari">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=704&q=85" alt="Bush to Beach Safari" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2023/03/13-Days-Kenya-Budget-Holiday-Safari.jpg" alt="Bush to Beach Safari" loading="lazy">
         <span class="pkg-badge">Grand Tour</span>
       </div>
       <div class="pkg-body">
@@ -384,14 +413,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">The full Kenyan story — Lake Bogoria, Nakuru, the Maasai Mara, Naivasha, Amboseli, Tsavo West and Voyager Ziwani, finishing at Taita Hills Saltlick before the coast.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (18)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="bush-to-beach">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85" alt="Tarangire, Ngorongoro &amp; Manyara" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2023/03/5-days-tarangire-ngorongoro-manyara-and-saltlick.jpg" alt="Tarangire, Ngorongoro &amp; Manyara" loading="lazy">
         <span class="pkg-badge">Tanzania</span>
       </div>
       <div class="pkg-body">
@@ -400,14 +429,14 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">Northern Tanzania&#x27;s finest — Tarangire&#x27;s elephant herds, the wildlife wonder of the Ngorongoro Crater, and the tree-climbing lions of Lake Manyara.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (33)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="tarangire-ngorongoro">READ MORE</button>
         </div>
       </div>
     </article>
 
     <article class="pkg-card">
       <div class="pkg-img-wrap">
-        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=701&q=85" alt="Zanzibar Island Escape" loading="lazy">
+        <img src="https://aroundholidayadventure.com/wp-content/uploads/2025/09/Untitled-3.png" alt="Zanzibar Island Escape" loading="lazy">
         <span class="pkg-badge">Island Escape</span>
       </div>
       <div class="pkg-body">
@@ -416,7 +445,7 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
         <p class="pkg-desc">A short hop across to the Spice Island — Stone Town&#x27;s history, dhow sunset cruises and barefoot days on the powdery white sand of the east coast.</p>
         <div class="pkg-foot">
           <span class="pkg-rate">★ 4.9 (41)</span>
-          <a href="#contact" class="btn-pill-sm">READ MORE</a>
+          <button type="button" class="btn-pill-sm pkg-read" data-pkg="zanzibar">READ MORE</button>
         </div>
       </div>
     </article></div>
@@ -465,7 +494,7 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
 <footer>
   <div class="foot-grid">
     <div>
-      <h5>Rolfam Tours and Travel and Travel</h5>
+      <h5>Rolfam Tours and Travel</h5>
       <p>Kenya safari specialists based in Mombasa. Tailored journeys across the Maasai Mara, Tsavo, Amboseli, Samburu, the Rift Valley lakes and the Swahili coast.</p>
     </div>
     <div>
@@ -493,8 +522,66 @@ footer{background:#1F1A12;color:#cdbfa6;padding:3.5rem 1.5rem 1.5rem}
       <p>✉ info@rolfamtours.com</p>
     </div>
   </div>
-  <div class="foot-bottom">© 2026 Rolfam Tours and Travel and Travel. All rights reserved.</div>
+  <div class="foot-bottom">© 2026 Rolfam Tours and Travel. All rights reserved.</div>
 </footer>
+
+
+<!-- Package details modal -->
+<div class="modal-backdrop" id="pkgModal" role="dialog" aria-modal="true" aria-labelledby="pkgModalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <button class="modal-close" id="pkgModalClose" aria-label="Close">&times;</button>
+      <h3 id="pkgModalTitle">Package</h3>
+      <div class="mh-sub" id="pkgModalSub"></div>
+    </div>
+    <div class="modal-body" id="pkgModalBody"></div>
+    <div class="modal-foot">
+      <a class="mf-call" href="tel:+254714306991">📞 Call +254 714 306 991</a>
+      <a class="mf-wa" id="pkgModalWa" href="#" target="_blank" rel="noopener">💬 Book on WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- Floating WhatsApp -->
+<a class="wa-fab" href="https://wa.me/254714306991?text=Hi%20Rolfam%2C%20I%27d%20like%20to%20enquire%20about%20a%20Kenya%20safari." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.3 31.6l7.9-2.1c2.3 1.3 4.9 1.9 7.7 1.9h.1c8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.4c-2.5 0-4.9-.7-7-2l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.2-4.8-2.2-7.5C2.6 8.6 8.6 2.6 16 2.6S29.4 8.6 29.4 16 23.4 28.8 16 28.8zm7.4-9.6c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-1.2-1.1-2-2.4-2.3-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3 0-.5-.1-.7-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.7c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4 0 2 1.5 4 1.7 4.2.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9 1 .3 1.8.3 2.5.2.8-.1 2.4-1 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.1-.4-.2-.7-.4z"/></svg>
+</a>
+
+<script>window.PKG_DETAILS = {"tsavo-east-west-amboseli": {"title": "Tsavo East, West & Amboseli Safari", "intro": ["5 Days: Tsavo East, west Voyager Ziwani and Amboseli safari"], "sections": [{"h": "Parks & Reserves", "body": "Tsavo East National Park Voyager Ziwani Tsavo Westt National Park Amboseli National Park"}, {"h": "Day 1: Mombasa/Diani \u2013 Tsavo East National Park.", "body": "You will be picked up from your hotel early in the morning at 6:30 am, and drive to Tsavo East National Park through Bachuma gate. Start game drive immediately, until Lunch time. Proceed to the camp for lunch as well as check-in. After lunch you will have an afternoon game drive searching for the big 5.Tsavo East National Park is located 333 km from Nairobi and approximately 160 Km from Mombasa, it is one of the largest national parks in Kenya. The park contains some fantastic terrain, including rivers, lakes, tarns, glaciers, and peaks with a wide variety of vegetation, including grasslands, acacia vegetation, open plains and savanna. It is therefore recognized as one of the world\u2019s leading bio-diversity strongholds. Some of the popular destinations within the park include the Mudanda Rock. You can view a variety of animals at this park, which includes; elephant, lion, leopard, crocodile, waterbuck, kudu, gerenuk, zebra and Aruba Hunter\u2019s hartebeest. You will also observe the large herds of red elephants- they glow red due to red dust of Tsavo. There are also about 500 species of birds, including the ostrich, and migratory birds like kestrels and buzzards. Dinner and overnight at Voi Wildlife lodge or Zomeni Lion hill Lodge , (Lunch & Dinner)."}, {"h": "Day 2: Tsavo east National park \u2013 Voyager Ziwani", "body": "Early morning game drive before breakfast then, depart for Voyager Ziwani arriving for lunch as well as check in at the Camp. Relax until 16:00hrs, time to go for escorted game walks with the experienced naturalist until 18:00 Hours time for dinner. After dinner go for night game drives to view grazing hippos and nocturnal game. Overnight at Voyager Ziwani Camp, (Full Board)."}, {"h": "Day 3: Voyager Ziwani \u2013 Tsavo west National Park", "body": "Early morning games drives and then depart after Breakfast for Tsavo West National Park. On arrival, start the morning game viewing en route to the lodge for lunch as well as check in. Relax until 16:00hrs, time to visit the Rhino Sanctuary have a chance to view Rhinos, elephants, buffalos, leopards, antelopes, impalas, monkeys and other kinds of animals. View the beautiful sceneries and mountains of Tsavo West. Dinner and overnight at Ngulia Safari lodge, (Lunch & Dinner)."}, {"h": "Day 4:Tsavo West National Park \u2013 Amboseli National Park", "body": "After breakfast, depart for Amboseli National Park, passing through Mzima Springs spot Hippos, Crocodiles and Fish in the crystal clear waters and see the volcanic formations Shetani lava flow. Arrive in Amboseli National Park and make a game drive en route before checking in at the camp. After lunch, relax until 16:00hrs, time for the afternoon game viewing that lasts until 18:00hrs with chance to view lions, elephants, buffalos, monkeys and other kinds of animals. Learn the Masai People culture by visiting them at their Village (The Manyattas) at Extra cost. Dinner and overnight at Sentrim Amboseli Camp or Kibo safari camp, (Full Board)."}, {"h": "Day 5: Amboseli National Park \u2013 Nairobi Hotel/ Airport", "body": "Morning game drive before breakfast then last game drives before resting for lunch. Depart for Nairobi after lunch, arriving in the early evening, (Breakfast & Lunch)."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "tsavo-voyager-ziwani": {"title": "Tsavo East, West, Voyager Ziwani & Amboseli", "intro": ["5 Days: Tsavo East, west Voyager Ziwani and Amboseli safari"], "sections": [{"h": "Parks & Reserves", "body": "Tsavo East National Park Voyager Ziwani Tsavo Westt National Park Amboseli National Park"}, {"h": "Day 1: Mombasa/Diani \u2013 Tsavo East National Park.", "body": "You will be picked up from your hotel early in the morning at 6:30 am, and drive to Tsavo East National Park through Bachuma gate. Start game drive immediately, until Lunch time. Proceed to the camp for lunch as well as check-in. After lunch you will have an afternoon game drive searching for the big 5.Tsavo East National Park is located 333 km from Nairobi and approximately 160 Km from Mombasa, it is one of the largest national parks in Kenya. The park contains some fantastic terrain, including rivers, lakes, tarns, glaciers, and peaks with a wide variety of vegetation, including grasslands, acacia vegetation, open plains and savanna. It is therefore recognized as one of the world\u2019s leading bio-diversity strongholds. Some of the popular destinations within the park include the Mudanda Rock. You can view a variety of animals at this park, which includes; elephant, lion, leopard, crocodile, waterbuck, kudu, gerenuk, zebra and Aruba Hunter\u2019s hartebeest. You will also observe the large herds of red elephants- they glow red due to red dust of Tsavo. There are also about 500 species of birds, including the ostrich, and migratory birds like kestrels and buzzards. Dinner and overnight at Voi Wildlife lodge or Zomeni Lion hill Lodge , (Lunch & Dinner)."}, {"h": "Day 2: Tsavo east National park \u2013 Voyager Ziwani", "body": "Early morning game drive before breakfast then, depart for Voyager Ziwani arriving for lunch as well as check in at the Camp. Relax until 16:00hrs, time to go for escorted game walks with the experienced naturalist until 18:00 Hours time for dinner. After dinner go for night game drives to view grazing hippos and nocturnal game. Overnight at Voyager Ziwani Camp, (Full Board)."}, {"h": "Day 3: Voyager Ziwani \u2013 Tsavo west National Park", "body": "Early morning games drives and then depart after Breakfast for Tsavo West National Park. On arrival, start the morning game viewing en route to the lodge for lunch as well as check in. Relax until 16:00hrs, time to visit the Rhino Sanctuary have a chance to view Rhinos, elephants, buffalos, leopards, antelopes, impalas, monkeys and other kinds of animals. View the beautiful sceneries and mountains of Tsavo West. Dinner and overnight at Ngulia Safari lodge, (Lunch & Dinner)."}, {"h": "Day 4:Tsavo West National Park \u2013 Amboseli National Park", "body": "After breakfast, depart for Amboseli National Park, passing through Mzima Springs spot Hippos, Crocodiles and Fish in the crystal clear waters and see the volcanic formations Shetani lava flow. Arrive in Amboseli National Park and make a game drive en route before checking in at the camp. After lunch, relax until 16:00hrs, time for the afternoon game viewing that lasts until 18:00hrs with chance to view lions, elephants, buffalos, monkeys and other kinds of animals. Learn the Masai People culture by visiting them at their Village (The Manyattas) at Extra cost. Dinner and overnight at Sentrim Amboseli Camp or Kibo safari camp, (Full Board)."}, {"h": "Day 5: Amboseli National Park \u2013 Nairobi Hotel/ Airport", "body": "Morning game drive before breakfast then last game drives before resting for lunch. Depart for Nairobi after lunch, arriving in the early evening, (Breakfast & Lunch)."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "tsavo-west-amboseli-saltlick": {"title": "Tsavo West, Amboseli & Taita Hills Saltlick", "intro": ["4 Days Tsavo West, Amboseli & Taita Hills/Saltlick"], "sections": [{"h": "Parks & Reserves", "body": "Tsavo Tsavo West National Park Amboseli National Park Taita Hills/Saltlick"}, {"h": "Day 1: Mombasa \u2013 Tsavo West", "body": "Depart Mombasa for Tsavo West through the Mombasa Nairobi Highway. Enter Tsavo West through Tsavo River gate and proceed on to a game viewing along the palm ringed Tsavo River home for hippos and crocodiles. Lunch at Ngulia Safari Lodge. In the afternoon, visit Ngulia Rhino Sanctuary to search the rare black rhino. Dinner and overnight at Kilaguni Serena, Rhino Valley Lodge or similar."}, {"h": "Day 2: Tsavo West \u2013 Amboseli", "body": "Depart the Lodge after breakfast and proceed to the famous Mzima Springs where some 250 litres of water gush out of the Chyulu Lava flows everyday creating a scenic home to fat pods of hippos and crocodile infested pools. Drive out of Tsavo West on the Shetani lava flows to Amboseli National Park for lunch at Oltukai Lodge/Amboseli Serena Lodge. Afternoon game drives on this magnificent park on the back drop of Mount Kilimanjaro in search for lions, cheetah, buffalo, rhino and elephant. Plenty of plains game will be seen. Dinner and overnight at Oltukai/Amboseli Serena lodge."}, {"h": "Day 3: Amboseli \u2013 Taita Hills (Saltlick)", "body": "After breakfast make drive en route exiting the park proceeding to Taita Hills for lunch and leisure. Afternoon game drive is made in the Taita Hills (Salt lick) Wildlife Sanctuary famous for its large numbers of the prides of lions. Also to be seen are the elephants, buffaloes, giraffe, impala, baboon, warthog and waterbuck. Dinner and overnight at Sarova Saltlick Safari Lodge."}, {"h": "Day 4: Saltlick \u2013 Mombasa", "body": "Early breakfast, make the final game drive as you exit the sanctuary before midday to have lunch at Lion Hill Camp/ Voi town. Proceed to Mombasa with afternoon arrival at your coastal hotel."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "aberdares-mara-nakuru": {"title": "Aberdares, Mara & Lake Nakuru", "intro": ["5 Days, Aberdares, Mara, Nakuru"], "sections": [{"h": "Parks & Reserves", "body": "Aberdares Ranges Masai Mara National reserve Lake Nakuru National reserve"}, {"h": "Day 1: Nairobi \u2013 Aberdares", "body": "Starts in Nairobi with a Bungee Jump to get your blood flowing & heart pumping ready for a big game photo shoot. Lunch at the Country Club. Aberdare ranges where some of the most beautiful birds of Africa & rare Antelopes can be seen. Overnight at the Ark Hotel."}, {"h": "Day 2: Aberdares \u2013 Masai Mara", "body": "Proceed to the Mara via Naivasha Country Club for Lunch. After a relaxed lunch & a short drive enter the Mara through the Sekenani gate where you will immediately see the beauty of the park & understand why the Masai Mara is the greatest place on earth to view wildlife. Accommodation at the Mara Sopa Lodge where class, culture & comfort with extensive spirit of service mix."}, {"h": "Day 3: Masai Mara", "body": "On the next morning have an early breakfast then climb into the skies in a hot air balloon viewing the great animal herds. Afterwards have a grand champagne breakfast served in colonial splendor."}, {"h": "Day 4: Masai Mara \u2013 Lake Nakuru", "body": "Depart the Mara for Nakuru National Park, a small shaded park famous for its Pink Flamingoes population as well as black rhino & leopards. Dinner and overnight at Lake Nakuru Lodge."}, {"h": "Day 5:Lake Nakuru \u2013 Nairobi", "body": "Drive to Nairobi after morning game drive , arrive at Nairobi Serena. Dinner at the famous Carnivore where a delicious selection of meats will be served to you. After dinner you have the choice of going on a club crawl or drive back to your Nairobi Hotel."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "wildebeest-migration": {"title": "Wildebeest Migration Safari", "intro": ["4 Days Nairobi Mara Nakuru"], "sections": [{"h": "Parks & Reserves", "body": "Maasai mara Game Reserve Lake Nakuru National Park"}, {"h": "Day 1: Nairobi \u2013 Maasai mara Game Reserve.", "body": "Early morning pick up from the Hotel/Airport at 7:00am and then drive along the Great Rift Valley, passing by the extinct volcano of Mount Longonot en route to Masai Mara Game Reserve, arriving for lunch as well as check- in. Relax until 16:00 Hours time for evening game drive with a chance to see the Big Five; Lion, Elephant, Rhino, Buffalo and the Leopard; Spot herds of Wildebeests, Zebras, Gazelles, Impalas, Masai Giraffes and other kinds of African wildlife in this fascinating wildlife paradise. Dinner and overnight at Mara sopa Lodge or Elangata Olerai Tented camp ."}, {"h": "Day 2: Maasai Mara Game Reserve.", "body": "Spend a whole day viewing wildlife in Masai Mara Game reserve with morning and afternoon game drives. Have a chance to see the \u201cBIG FIVE\u201d: other kinds of African wildlife, can also be easily spotted. Witness the famous wildebeest and zebra migration (from Serengeti National Park to Masai Mara Game Reserve); this movement is one of world wonders. Masai Mara being the stomping ground of the Great Migration, a massive accumulation of 1.5 million wildebeest, 200,000 zebras and 350,000 gazelles stretching their legs over 1,200 miles in an annual race to find enough water and green grass for their survival. Breakfast, Lunch, dinner and Overnight at Mara sopa Lodge or Elangata Olerai Tented camp ."}, {"h": "Day 3:Maasai Mara \u2013 Lake Nakuru National Park .", "body": "Morning game drives and then depart for Lake Nakuru National Park, arriving time for lunch at the camp/lodge as well as check- in. Afternoon game drives takes you around the lake to view Flamingo\u2019s and pelicans. Also, spot White/Black Rhinos, Rothschild Giraffe, Waterbucks and other kinds of African wildlife. The Lake Forest attracts a wide variety of birds. Dinner and overnight at Lake Nakuru Lodge or Flamingo Hill camp ."}, {"h": "Day 4: Lake Nakuru \u2013 Nairobi", "body": "Have breakfast and check out of the lodge. Morning game drive in this ornithologist park. Have lunch enroute and drive to Nairobi arriving in the early evening. Drop off at your respective Airport or Hotel."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "best-of-aberdares": {"title": "Best of Aberdares Safari", "intro": ["7 Days Safari Samburu, Aberdares, Lake Nakuru & Masai Mara"], "sections": [{"h": "Parks & Reserves", "body": "Samburu National Reserve Lake Nakuru National Park, Nakuru Masai Mara National Reserve Aberdares Ranges"}, {"h": "Day 1: nairobi \u2013 samburu.", "body": "Pick up from your hotel in Nairobi, drive North across the equator to the Samburu National Reserve (360km) and check in to your lodge for lunch. After lunch relax then make evening game drive . Dinner and overnight at Samburu Serena/ Elephant bedroom camp."}, {"h": "Day 2: Samburu", "body": "Morning and afternoon game drives in the open savannah which is transversed by Uaso Nyiro River. The river is populated by hippos and crocodiles, the park is a home to a host of animals including several species which are rarely seen in numbers elsewhere including Gravy\u2019s Zebra, reticulated giraffes and long necked generuks."}, {"h": "Day 3: Samburu \u2013 Aberdares", "body": "From Samburu drive South to the Aberdares (220km) and have lunch at Outspan Hotel. During lunch enjoy views of Mt Kenya framed by the white water of the Chania River. After lunch transfer to treetops the most famous game viewing lodge in the world, overlooking a water hole and saltlick high in the Aberdare National Park."}, {"h": "Day 4: Aberdares \u2013 Lake Nakuru", "body": "An early morning transfer to Outspan hotel for breakfast. Descend into the Great Rift Valley and continue on to Lake Nakuru. Have lunch at Lake Nakuru Lodge. After lunch drive in Lake Nakuru National park for an evening game drive. Dinner and overnight at Lake Nakuru Lodge, Mbweha Camp or similar."}, {"h": "Day 5: Lake Nakuru \u2013 Masai Mara", "body": "Drive to the Masai Mara National Reserve (320km). Have lunch at Keekorok Lodge built in a prime position to enjoy wildebeest migration. After lunch make game drive. Dinner and overnight at the lodge/camp."}, {"h": "Day 6: Maasai Mara", "body": "Enjoy an early morning balloon flight over the Mara, followed by a bubbly bush breakfast (optional extra) or an early morning game drive followed by breakfast at the lodge. Relax by the pool overlooking the endless panorama stretched out before you. Afternoon game drive. Dinner and overnight at Keekorok lodge or similar camp."}, {"h": "Day 7: Masai Mara \u2013 Nairobi", "body": "Have breakfast and make last game drive while exiting the park. Drive to Nairobi and drop off at your respective hotel/airport ."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "samburu-nakuru-mara": {"title": "Samburu, Lake Nakuru & Masai Mara", "intro": ["6 Days Safari Samburu, Lake Nakuru, Masai Mara."], "sections": [{"h": "Parks & Reserves", "body": "Samburu Game Reserve Lake Nakuru National Park Masai Mara National Reserve"}, {"h": "Day 1; Nairobi \u2013 Samburu Game Reserve", "body": "Depart Nairobi in the morning for Samburu National reserve crossing the Equator and driving through changing terrain to the rugged semi-desert regions in the northern Kenya. Though harsh, it is blessed with species rarely found elsewhere. Arrive in time for lunch at lodge. Afternoon game drive to search for the stars of Samburu. Dinner and overnight at Samburu Sopa Lodge/ Samburu Serena lodge."}, {"h": "Day 2; Samburu", "body": "Full day in Samburu with game drives .Search for the rare liver red reticulated giraffe, Gravy\u2019s Zebra, Beisa Oryx, Blue flanked Somali Ostrich, Vulturine Guinea Fowl, Longneck Gerenuk. See braving lions on the grass, Cheetah, Leopards among plenty of other plains game. (Optional visits to Samburu villages). All meals and overnight at Samburu Serena lodge/Ashnil Samburu or similar."}, {"h": "Day 3; Samburu \u2013 \u00a0Lake Nakuru National Park", "body": "Breakfast at the lodge and drive to the shoulders of Mt. Kenya via Thomson Falls arriving Lake Nakuru in time for lunch, afternoon game drive at the Pink lake referred so for it\u2019s thousands of pink flamingos and other birdlife-it\u2019s a Bird watchers paradise. It has a surprisingly number of animals, all the \u201cbig five\u201d except the elephant. Dinner and overnight at Lake Nakuru Lodge/Sarova lion Hill/Mbweha Camp."}, {"h": "Day 4; Lake Nakuru \u2013 Masai Mara National Reserve", "body": "Breakfast at the lodge and depart for Masai Mara crossing the Loita plains, see red clad Maasai warriors tend their multi-colored herds amongst plains game. Arrive Mara in time for lunch. Game viewing enroute to lodge for lunch. Afternoon game drive. Dinner and overnight at Mara Sopa Lodge/Keekerok lodge."}, {"h": "Day 5.Maasai Mara National Reserve", "body": "Breakfast at lodge and leave with picnic lunches for a full day game drive inside the Park. Search for Wild game black manned lion for which Mara is famous for, cheetah, buffalo, wildebeest, zebra, leopard, grants gazelle are quite common, even the rare rhino might come out of the thicket for you, hyenas are plentiful. Extend your drive to the hippo point where schools of hippo submerge on the approach of vehicles only to surface seconds later to shot and gamble their displeasure as the crocodiles sunbathe on the river banks mouths agape. Between meals there is optional visit to the Maasai villages for an insight to their culture if clients so wish. Meals and overnight at Mara Sopa/Keekerok Lodge."}, {"h": "Day 6; Masai Mara \u2013 Nairobi", "body": "Breakfast at lodge and depart with gamedrive. Check out and drive to Nairobi arriving at around 1400 hours. Transfer to the airport for your flight back."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "ngutuni-lions-bluff": {"title": "Ngutuni, Amboseli, Tsavo West & Lions Bluff", "intro": ["5 Days Ngutuni, Amboseli, Tsavo West, Lions Bluff"], "sections": [{"h": "Parks & Reserves", "body": "Ngutuni Game Sanctuary Tsavo West National Park Amboseli National Park"}, {"h": "DAY 1 Ngutuni", "body": "Pick up from your hotel at 6 am and drive along Mombasa \u2013 Nairobi highway. Enter Ngutuni Game Sanctuary and make game drive till time for lunch. After lunch, relax. At 4pm make evening game drive, then back to the lodge for dinner and overnight."}, {"h": "Day 2 Ngutuni \u2013 Amboseli National Park", "body": "Wake up, have coffee, make an early morning game drive. Come back to the lodge for full breakfast. After breakfast, check out of the lodge and drive to Amboseli. At Amboseli National Park, make game drive en route to the lodge for lunch. After lunch, relax . Afternoon game drives on this magnificent park on the back drop of Mount Kilimanjaro in search for lions, cheetah, buffalo, rhino and elephant."}, {"h": "Day 3 Amboseli \u2013 Tsavo West", "body": "Wake up, have coffee and go for an early morning game drive. After the game drive come back to the lodge for full breakfast. After breakfast check out of the lodge and drive to Tsavo West National Park. On arrival at Tsavo West, make game drive enroute to the lodge for lunch. After lunch relax then go for an evening game drive at 4pm including a visit to the Rhino Sanctuary. Drive back to the lodge for dinner and overnight."}, {"h": "Day 4 Tsavo West \u2013 Lions Bluff", "body": "Have an early breakfast and check out of the lodge. Visit Mzima Springs where some 250 litres of water gush out of the Chyulu Lava flows everyday creating a scenic home to fat pods of hippos and crocodile infested pool. Make game drive whilst checking out of the park. Drive to Lions bluff with game drive en route. Check in the lodge for lunch. After lunch relax and make an evening game drive with splendid views. Drive back to the lodge for dinner and overnight."}, {"h": "Day 5 Lions bluff back to the hotel", "body": "Have breakfast and check out of the lodge. Make game drive en route. Stop at Voi Town for lunch. After lunch"}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "honeymoon-safari": {"title": "Honeymoon Safari", "intro": ["7 Days Safari Samburu, Aberdares, Lake Nakuru & Masai Mara"], "sections": [{"h": "Parks & Reserves", "body": "Samburu National Reserve Lake Nakuru National Park, Nakuru Masai Mara National Reserve Aberdares Ranges"}, {"h": "Day 1: nairobi \u2013 samburu.", "body": "Pick up from your hotel in Nairobi, drive North across the equator to the Samburu National Reserve (360km) and check in to your lodge for lunch. After lunch relax then make evening game drive . Dinner and overnight at Samburu Serena/ Elephant bedroom camp."}, {"h": "Day 2: Samburu", "body": "Morning and afternoon game drives in the open savannah which is transversed by Uaso Nyiro River. The river is populated by hippos and crocodiles, the park is a home to a host of animals including several species which are rarely seen in numbers elsewhere including Gravy\u2019s Zebra, reticulated giraffes and long necked generuks."}, {"h": "Day 3: Samburu \u2013 Aberdares", "body": "From Samburu drive South to the Aberdares (220km) and have lunch at Outspan Hotel. During lunch enjoy views of Mt Kenya framed by the white water of the Chania River. After lunch transfer to treetops the most famous game viewing lodge in the world, overlooking a water hole and saltlick high in the Aberdare National Park."}, {"h": "Day 4: Aberdares \u2013 Lake Nakuru", "body": "An early morning transfer to Outspan hotel for breakfast. Descend into the Great Rift Valley and continue on to Lake Nakuru. Have lunch at Lake Nakuru Lodge. After lunch drive in Lake Nakuru National park for an evening game drive. Dinner and overnight at Lake Nakuru Lodge, Mbweha Camp or similar."}, {"h": "Day 5: Lake Nakuru \u2013 Masai Mara", "body": "Drive to the Masai Mara National Reserve (320km). Have lunch at Keekorok Lodge built in a prime position to enjoy wildebeest migration. After lunch make game drive. Dinner and overnight at the lodge/camp."}, {"h": "Day 6: Maasai Mara", "body": "Enjoy an early morning balloon flight over the Mara, followed by a bubbly bush breakfast (optional extra) or an early morning game drive followed by breakfast at the lodge. Relax by the pool overlooking the endless panorama stretched out before you. Afternoon game drive. Dinner and overnight at Keekorok lodge or similar camp."}, {"h": "Day 7: Masai Mara \u2013 Nairobi", "body": "Have breakfast and make last game drive while exiting the park. Drive to Nairobi and drop off at your respective hotel/airport ."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "bush-to-beach": {"title": "Bush to Beach Safari", "intro": ["13 Days (12 Nights): Kenya Safari"], "sections": [{"h": "Parks & Reserves", "body": "Lake Bogoria Lake Nakuru National Park Masai Mara Game Reserve Lake Naivasha Amboseli National Park Tsavo West National Park Voyager Ziwani Taita Hills Sanctuary (Salt Lick) Taita Hills Sanctuary (Salt Lick) Tsavo East National Park"}, {"h": "Day 1: Nairobi \u2013 Lake Bogoria.", "body": "Early morning pick up from Boulevard Hotel, Nairobi and then depart for Lake Bogoria arriving for lunch as well as check-in at the resort. An afternoon game drive takes you to the Lake where you will have a view of the hot springs and have Sauna; witness the pink parade of flamingoes on the lake shores. Animals small and great reside together in the grassy thicket around the park, making game viewing a unique up, close and candid experience. The papyrus outgrowth spreads across thirteen ficus woodlands as the smaller animals wallow in the swamps and other game like: buffalo, zebra, cheetah, baboon, warthog, caracal, spotted hyena, impala, dikdik appreciate the occasional afternoon showers. Lake Bogoria national park is indeed a heightening experience Bird watching. Dinner and Overnight at Lake Bogoria Spa & Resort, (Breakfast, Lunch & Dinner)."}, {"h": "Day 2: Lake Bogoria \u2013 Lake Nakuru National Park.", "body": "Early morning breakfast, then drive to Lake Nakuru National Park, arriving in time for lunch at lodge as well as check in. Afternoon game drive takes you to the lake to view Flamingoes and pelicans. Also, spot White/Black Rhinos, Rothschild Giraffe and Waterbucks. The Lake Forest attracts a wide variety of birds. Dinner and overnight at Lake Nakuru Lodge/ Flamingo Hill Tented Camp/Sarova Lion Hill Lodge, (Breakfast, Lunch & Dinner)."}, {"h": "Day 3: Lake Nakuru National Park \u2013 Masai Mara Game Reserve.", "body": "Early morning game drive before breakfast then drive along the Great Rift Valley, passing by the extinct volcano of Mount Longonot en route to Masai Mara Game Reserve with game en route to the camp for check in as well for lunch. Afternoon game viewing in this fascinating wildlife paradise with a chance to view; giraffes, elephants, monkeys, leopards, lions, gazelles and different bird\u2019s species. Dinner and Overnight at Mara Sopa Lodge/ Camp Oloshaiki/ Ashnil Mara Camp, (Breakfast, Lunch & Dinner)."}, {"h": "Day 4: Masai Mara Game Reserve.", "body": "Spend a whole day viewing wildlife in Masai Mara Game reserve with morning and afternoon game drives. Have a chance to see the \u201cBIG FIVE\u201d: Lion, Elephant, Rhino, Buffalo and Leopard. Wildebeests, Zebras, Cheetahs and Gazelles, other kinds of African wildlife can also be easily spotted. Breakfast, Lunch, dinner and Overnight at Mara Sopa Lodge/ Camp Oloshaiki/ Ashnil Mara Camp, (Breakfast, Lunch & Dinner)."}, {"h": "Day 5: Masai Mara Game Reserve.", "body": "Spend a whole day viewing wildlife in Masai Mara Game reserve with morning and afternoon game drives. Have a chance to see the \u201cBIG FIVE\u201d: Lion, Elephant, Rhino, Buffalo and Leopard. Wildebeests, Zebras, Cheetahs and Gazelles, other kinds of African wildlife can also be easily spotted. Breakfast, Lunch, dinner and Overnight at Mara Sopa Lodge/ Camp Oloshaiki/ Ashnil Mara Camp, (Breakfast, Lunch & Dinner)."}, {"h": "Day 6: Masai Mara Game Reserve- Lake Naivasha.", "body": "Morning games drives and then depart after breakfast for Lake Naivasha arriving for lunch. Enjoy boat trip to the lake to view hippos, birds and other kinds of African wildlife (at extra Cost). Afternoon drives to the hell\u2019s Gate for more game viewing as well as enjoy cycling. Dinner and overnight at Lake Naivasha Sopa Resort/ Lake Naivasha Sawela lodge, (Breakfast, Lunch & Dinner)."}, {"h": "Day 7: Lake Naivasha \u2013 Amboseli National Park.", "body": "Depart after breakfast for Amboseli National Park, Via Nairobi and Masailand. On arrival, make a game drive en route to the Camp. The afternoon game viewing starts at 16:00hrs.This Park is the home of Elephants, Wildebeest, Buffalos, Gazelles, Lions, Cheetahs, monkey families and rare bird species. In the early evening, the clouds clear, exposing the snow \u2013capped dome of Mt. Kilimanjaro. Dinner and Overnight at Amboseli Serena lodge/Satao Elerai Camp/Oltukai Lodge, (Breakfast, Lunch & Dinner)."}, {"h": "Day 8: Amboseli National Park.", "body": "Spend a whole day in Amboseli National Park, with morning and afternoon game drives. This park is termed as an Animal\u2019s paradise. Visit Masai Village and learn their rich culture at an extra cost. Dinner and overnight at Amboseli Serena lodge/Satao Elerai Camp/Oltukai Lodge, (Breakfast, Lunch & Dinner)."}, {"h": "Day 9: Amboseli National Park- Tsavo West National Park.", "body": "Early morning game drive before breakfast then, depart for Tsavo West National Park. See the volcanic formations (Shetani Lava Flow) on the way to Mzima Springs where Hippos and Crocodiles are seen from the underwater hide. Continue and check in at the camp. After lunch, relax until 16:00hrs, time to visit the Rhino Sanctuary. Spot Elephants, Giraffes, the varied bird life of Tsavo West and of course the Rhino. Dinner and overnight at Severin Camp/Kilaguni Serena Lodge, (Breakfast, Lunch & Dinner)."}, {"h": "Day 10: Tsavo West National Park \u2013 Voyager Ziwani", "body": "Early morning game drives before breakfast then, depart for Voyager Ziwani arriving for lunch as well as check in at the Camp. Relax until 16:00hrs, time to go for escorted game walks with the experienced naturalist until 18:00 Hours time for dinner. After dinner go for night game drives to view grazing hippos and nocturnal game. Overnight at Voyager Ziwani Camp, (Breakfast, Lunch & Dinner)."}, {"h": "Day 11: Voyager Ziwani \u2013 Taita Hills Sanctuary (Salt Lick).", "body": "Early morning breakfast then depart for salt Lick sanctuary arriving at Sarova salt Lick Game Lodge for lunch as well as check in. Afternoon game drives at this Sanctuary takes you to view Elephant, Buffalo, Gazelles and other kinds of wildlife. Dinner and overnight at Sarova Salt Lick Game Lodge, (Breakfast, Lunch & Dinner)."}, {"h": "Day 12: Taita Hills Sanctuary (Salt Lick) \u2013 Tsavo East National Park.", "body": "Early morning game drives before breakfast then depart for Tsavo East National Park. Game drives en route to the lodge for lunch as well as check-in. Afternoon game drives which starts at 16:00 Hours through this Kenya\u2019s largest park, with a chance to spot herds of Red Elephants, Lions, Giraffes, Zebras, Gazelles, Buffaloes, Waterbucks, Impalas and different bird species. Dinner and overnight at Voi Safari Lodge/ Voi wildlife/Ashnil Aruba, (Breakfast, Lunch & Dinner)."}, {"h": "Day 13: Tsavo East National Park \u2013 Nairobi Airport.", "body": "An early morning game drives before breakfast then depart to Nairobi with lunch at Nairobi, arriving in the late afternoon with transfer to Jomo Kenyatta International Airport or Hotel, (Breakfast & lunch)."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "tarangire-ngorongoro": {"title": "Tarangire, Ngorongoro & Manyara", "intro": ["5 Days tarangire, ngorongoro manyara and saltlick"], "sections": [{"h": "Parks & Reserves", "body": "Tarangire National Park Ngorongoro National Park Lake Manyara National Park Saltlick Diani Beach"}, {"h": "DAY 1: Kilimanjaro Airport \u2013\u00a0 Tarangire National Park", "body": "Upon arrival at Kilimanjaro airport, you will be met by your guide. This is a year-round park with distinct seasons offering different experiences, from dusty, dry and baking with animals clustered around the rapidly reducing river, to the fecund green season full of new-born animals and chattering birds. A lot of migratory animals aim to reside here during the dry season. You can see groups and herds of animals like 600 elephants followed by zebras, buffalos and oryxes who ventured from the Maasai to the Tarangire in search for water. There are also a few lions prowling around and looking for unsuspecting preys around the jungle. Some of the other animals that you may see here are antelopes, warthogs, hippos, cheetahs, leopards, foxes, jackals and waterbucks."}, {"h": "Day 2: Tarangire \u2013 Ngorongoro National Park", "body": "Enclosed within its towering walls are grasslands, swamps, forests, saltpans, a fresh water lake and a glorious variety of birdlife. Here too are all the members of the \u2018Big Five\u2019 (lion, elephant, rhino, leopard and buffalo) as well as a large cast of plains game and one of Africa\u2019s densest populations of predators. Enjoy a picnic lunch on the crater floor before driving back to your lodge for relaxation before dinner and overnight."}, {"h": "Day 3: Ngorongoro \u2013 Lake Manyara National Park", "body": "After breakfast, depart to the beautiful Lake Manyara, a shallow alkaline lake that shimmers in a cleft in the Great Rift Valley. Tucked below the majesty of the Rift Valley wall, Lake Manyara National Park consists of a thin green band of forest, flanked by the sheer 600 m high red and brown cliffs of the escarpment on one side and by the white-hot shores of an ancient soda lake on the other. Acacia woodland shelters the park\u2019s famous tree climbing lions, lying languidly among the branches in the heat of the day. Dinner and overnight at the lodge."}, {"h": "Day 4: Lake Manyara \u2013 Saltlick", "body": "After breakfast leave for Sarova Saltlick Lodge in Kenya. The jeep or 4*4 will drop you at the border where you will be picked by a safari van from Kenya. Drive and check in to Sarova Saltlick lodge for late lunch. The afternoon will hold yet more gamedrives in this sanctuary. Dinner and overnight at Sarova Saltlick Lodge."}, {"h": "Day 5: Saltlick \u2013 Diani", "body": "After breakfast, make last gamedrive whilst checking out of the Sanctuary. Drive to Mombasa with afternoon arrival at your coastal hotel."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}, "zanzibar": {"title": "Zanzibar Island Escape", "intro": ["3 Days Zanzibar"], "sections": [{"h": "Parks & Reserves", "body": "3 Day Zanzibar Island"}, {"h": "Day 1", "body": "Pick Up from your Hotel at 0930 ours drive to Moi International Airport to catch your flight at 1245 hours to Zanzibar Island. Flying time is 45 mins to Zanzibar. After arriving in Zanzibar you will be taken to your hotel (Zanzibar Beach Resort or Zanzibar Serena). You will check in to your hotel on Half Board basis. In the afternoon you will do Stone Town tour then come for overnight."}, {"h": "Day 2", "body": "After breakfast you will do the Spice Tour with a combination of the Sultan\u2019s Palace and other area of interest then you come for dinner and overnight."}, {"h": "Day 3", "body": "After breakfast then you will be transferred to the airport to catch your flight your flight back to Kenya at 0840 hours."}, {"h": "Tour Inclusions", "body": "Transport in a tourist minibus full board accommodation, park fees and game drives"}, {"h": "Tour Exclusions", "body": "Drinks Tips for the service Yellow fever vaccination Visa Things of personal use"}]}};</script>
+<script>
+(function(){
+  const modal=document.getElementById('pkgModal');
+  const titleEl=document.getElementById('pkgModalTitle');
+  const subEl=document.getElementById('pkgModalSub');
+  const bodyEl=document.getElementById('pkgModalBody');
+  const waLink=document.getElementById('pkgModalWa');
+  const closeBtn=document.getElementById('pkgModalClose');
+  function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+  function open(key){
+    const d=window.PKG_DETAILS&&window.PKG_DETAILS[key];
+    if(!d) return;
+    titleEl.textContent=d.title;
+    subEl.textContent=(d.intro&&d.intro[0])||'Tailored Kenya safari itinerary';
+    let html='';
+    (d.sections||[]).forEach(s=>{
+      html += '<h4>'+escapeHTML(s.h)+'</h4><p>'+escapeHTML(s.body)+'</p>';
+    });
+    if(!html) html='<p>Full itinerary available on request. Contact us for detailed day-by-day plans, inclusions and current rates.</p>';
+    bodyEl.innerHTML=html;
+    waLink.href='https://wa.me/254714306991?text='+encodeURIComponent("Hi Rolfam, I'm interested in the "+d.title+". Could you share full details and rates?");
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function close(){modal.classList.remove('open');document.body.style.overflow='';}
+  document.addEventListener('click',e=>{
+    const btn=e.target.closest('.pkg-read');
+    if(btn){e.preventDefault();open(btn.dataset.pkg);return;}
+    if(e.target===modal) close();
+  });
+  closeBtn.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') close();});
+})();
+</script>
 
 </body>
 </html>
